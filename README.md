@@ -1,4 +1,4 @@
-# Agile_Data_Code_2
+# Primera parte
 
 Code for [Agile Data Science 2.0](http://shop.oreilly.com/product/0636920051619.do), O'Reilly 2017. Now available at the [O'Reilly Store](http://shop.oreilly.com/product/0636920051619.do), on [Amazon](https://www.amazon.com/Agile-Data-Science-2-0-Applications/dp/1491960116) (in Paperback and Kindle) and on [O'Reilly Safari](https://www.safaribooksonline.com/library/view/agile-data-science/9781491960103/). Also available anywhere technical books are sold!
 
@@ -298,6 +298,9 @@ Vistit http://localhost:8080/home for the web version of Apache Airflow.
 - **TODO**: analyzing the setup.py: what happens if the task fails?, what is the peridocity of the task?
 
 ![Apache Airflow DAG success](images/airflow.jpeg)
+
+
+
 
 
 
