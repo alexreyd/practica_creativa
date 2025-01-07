@@ -221,7 +221,7 @@ docker exec -it kafka bash
   First, you need to change the base_paht val in the MakePrediction scala class,
   change that val for the path where you clone repo is placed:
   ```
-    val base_path= "/home/ibdn/BDFI/PracticaCreativaBDFI/"
+    val base_path= "/home/ibdn/BDFI/practica_creativa/"
     
   ``` 
   Then run the code using Intellij, sbt, or spark-submit with their respective arguments. 
