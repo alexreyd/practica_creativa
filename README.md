@@ -1,12 +1,5 @@
 # Primera parte
 
-Code for [Agile Data Science 2.0](http://shop.oreilly.com/product/0636920051619.do), O'Reilly 2017. Now available at the [O'Reilly Store](http://shop.oreilly.com/product/0636920051619.do), on [Amazon](https://www.amazon.com/Agile-Data-Science-2-0-Applications/dp/1491960116) (in Paperback and Kindle) and on [O'Reilly Safari](https://www.safaribooksonline.com/library/view/agile-data-science/9781491960103/). Also available anywhere technical books are sold!
-
-This is also the code for the [Realtime Predictive Analytics](http://datasyndrome.com/video) video course and [Introduction to PySpark](http://datasyndrome.com/training) live course!
-
-Have problems? Please file an issue!
-
-
 ## Realtime Predictive Analytics Course
 
 There is now a video course using code from chapter 8, [Realtime Predictive Analytics with Kafka, PySpark, Spark MLlib and Spark Streaming](http://datasyndrome.com/video). Check it out now at [datasyndrome.com/video](http://datasyndrome.com/video).
@@ -83,14 +76,18 @@ You need to install each component included in the architecture.
 The following list includes some links with the installation procedure for each component:
 
  - [Intellij](https://www.jetbrains.com/help/idea/installation-guide.html) (jdk_1.8) or VsCode
- - [Pyhton3](https://realpython.com/installing-python/) (Suggested version 3.7) 
- - [PIP](https://pip.pypa.io/en/stable/installing/)
- - [SBT](https://www.scala-sbt.org/release/docs/Setup.html) 
- - [MongoDB](https://docs.mongodb.com/manual/installation/) (Suggested version 6.0, if it fails try with mongo 4.0)
+   ```
+   jdk
+   ```
+ - [Pyhton3](https://realpython.com/installing-python/) (Suggested version 3.7) [USADA: 3.10.12]
+ - [PIP](https://pip.pypa.io/en/stable/installing/) [USADA: 22.0.2]
+ - [SBT](https://www.scala-sbt.org/release/docs/Setup.html) [1.10.5]
+ - [MongoDB](https://docs.mongodb.com/manual/installation/) (Suggested version 6.0, if it fails try with mongo 4.0) [4.4.29]
  - [Spark](https://spark.apache.org/docs/latest/) (Mandatory version 3.3.3)
  - [Scala](https://www.scala-lang.org)(Suggested version 2.12.10)
  - [Zookeeper](https://zookeeper.apache.org/releases.html)
  - [Kafka](https://kafka.apache.org/quickstart) (Mandatory version kafka_2.12-3.4.0)
+
 
  ### Create and use Python venv
 
@@ -211,7 +208,7 @@ The following list includes some links with the installation procedure for each 
   First, you need to change the base_paht val in the MakePrediction scala class,
   change that val for the path where you clone repo is placed:
   ```
-    val base_path= "/home/user/Desktop/practica_creativa"
+    val base_path= "/home/ibdn/BDFI/PracticaCreativaBDFI/"
     
   ``` 
   Then run the code using Intellij, sbt, or spark-submit with their respective arguments. 
@@ -220,7 +217,11 @@ Please, note that in order to use spark-submit you first need to compile the cod
   ```
   --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0
      
-  ``` 
+  ```
+
+```
+spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local[*]   --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0   target/scala-2.12/flight_prediction_2.12-0.1.jar show
+```
    Be carefull with the packages version because if you are using another version of spark, kafka or mongo you have to choose the correspondent version to your installation. This packages work with Spark 3.3.0, kafka_2.12-3.4.0 and mongo superior to 2.6
   
   ## Start the prediction request Web Application
