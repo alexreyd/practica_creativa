@@ -33,14 +33,11 @@ services:
       - "7077:7077"
       - "8080:8080"
     environment:
-      - "SPARK_MASTER=${SPARK_MASTER}"
-      - "INIT_DAEMON_STEP=setup_spark"
-      - "constraint:node==spark-master"
-      - "SERVER=${SERVER}"
+      SPARK_MASTER: spark://spark-master:7077
     networks:
       - my_network
     volumes:
-      - ./${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ./flight_prediction:/flight_prediction
 
   spark-worker-1:
     image: bde2020/spark-worker
@@ -50,50 +47,44 @@ services:
     ports:
       - "8081:8081"
     environment:
-      - "SPARK_MASTER=${SPARK_MASTER}"
-      - "INIT_DAEMON_STEP=setup_spark"
-      - "constraint:node==spark-worker"
-      - "SERVER=${SERVER}"
-      - "PROJECT_HOME=${PROJECT_HOME}"
+      SPARK_MASTER: spark://spark-master:7077
     networks:
       - my_network
     volumes:
-      - ./${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ./flight_prediction:/flight_prediction
 
-spark-worker-2:
+  spark-worker-2:
     image: bde2020/spark-worker
     container_name: spark-worker-2
     depends_on:
       - spark-master
     ports:
-      - "8081:8081"
+      - "8082:8082"
     environment:
-      - "SPARK_MASTER=${SPARK_MASTER}"
-      - "INIT_DAEMON_STEP=setup_spark"
-      - "constraint:node==spark-worker"
-      - "SERVER=${SERVER}"
-      - "PROJECT_HOME=${PROJECT_HOME}"
+      SPARK_MASTER: spark://spark-master:7077
     networks:
       - my_network
     volumes:
-      - ./${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ./flight_prediction:/flight_prediction
 
-spark-submit:
+  spark-submit:
     image: bde2020/spark-submit
     container_name: spark-submit
     depends_on:
       - spark-master
       - spark-worker-1
       - spark-worker-2
-    ports:
-      - "4040:4040"
     environment:
-      - "SPARK_MASTER=${SPARK_MASTER}"
-      - "constraint:node==spark-master"
-      - "SERVER=${SERVER}"
-    command: bash -c "sleep 15; /spark/bin/spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local[*]   --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0   target/scala-2.12/flight_prediction_2.12-0.1.jar show"
+      SPARK_MASTER: spark://spark-master:7077
+    command: >
+      bash -c "sleep 15; 
+               /spark/bin/spark-submit 
+               --class es.upm.dit.ging.predictor.MakePrediction 
+               --master local[*] 
+               --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 
+               target/scala-2.12/flight_prediction_2.12-0.1.jar show"
     volumes:
-      - ./${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ./flight_prediction:/flight_prediction
 
   mongo:
     image: mongo:latest
@@ -103,8 +94,8 @@ spark-submit:
     networks:
       - my_network
     volumes:
-      - ./${PROJECT_HOME}
-    command: bash -c "sleep 15; ./${PROJECT_HOME}/resources/import_distances.sh "
+      - ./resources:/resources
+    command: bash -c "sleep 15; /resources/import_distances.sh"
 
   flask:
     build: ./docker/flask
@@ -113,14 +104,14 @@ spark-submit:
       - kafka
       - mongo
     ports:
-      - "5000:5000"  
+      - "5000:5000"
     environment:
-      - KAFKA_BROKER=kafka:9092
-      - MONGO_URI=mongodb://mongo:27017
+      KAFKA_BROKER: kafka:9092
+      MONGO_URI: mongodb://mongo:27017
     networks:
       - my_network
     volumes:
-      - ./${PROJECT_HOME}
+      - ./flight_prediction:/app
 
 networks:
   my_network:
