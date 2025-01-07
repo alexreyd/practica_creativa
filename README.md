@@ -137,6 +137,18 @@ The following list includes some links with the installation procedure for each 
   ```
     flight_delay_classification_request
   ```
+  Para la parte de docker-compose se realiza con los siguientes comandos:
+  ```
+docker exec -it kafka bash
+
+ kafka-topics --create \
+    --bootstrap-server localhost:9092 \
+    --replication-factor 1 \
+    --partitions 1 \
+    --topic flight_delay_classification_request
+
+
+  ```
   (Optional) You can oen a new console with a consumer in order to see the messeges sent to that topic
   ```
   bin/kafka-console-consumer.sh \
