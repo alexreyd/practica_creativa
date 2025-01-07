@@ -23,6 +23,7 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
+      KAFKA_CREATE_TOPICS: "flight_delay_classification_request:1:1"
     networks:
       - my_network
 
@@ -34,11 +35,12 @@ services:
       - "8080:8080"
     environment:
       SPARK_MASTER: spark://spark-master:7077
-      PROJECT_HOME: /home/ibdn/BDFI/PracticaCreativaBDFI/
+      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa/
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}:${PROJECT_HOME}
+      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
 
   spark-worker-1:
     image: bde2020/spark-worker
@@ -49,11 +51,12 @@ services:
       - "8081:8081"
     environment:
       SPARK_MASTER: spark://spark-master:7077
-      PROJECT_HOME: /home/ibdn/BDFI/PracticaCreativaBDFI/
+      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa/
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}:${PROJECT_HOME}
+      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
 
   spark-worker-2:
     image: bde2020/spark-worker
@@ -64,11 +67,12 @@ services:
       - "8082:8082"
     environment:
       SPARK_MASTER: spark://spark-master:7077
-      PROJECT_HOME: /home/ibdn/BDFI/PracticaCreativaBDFI/
+      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa/
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}:${PROJECT_HOME}
+      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
 
   spark-submit:
     image: bde2020/spark-submit
@@ -79,16 +83,12 @@ services:
       - spark-worker-2
     environment:
       SPARK_MASTER: spark://spark-master:7077
-      PROJECT_HOME: /home/ibdn/BDFI/PracticaCreativaBDFI/
+      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa/
     volumes:
-      - ${PROJECT_HOME}:${PROJECT_HOME}
+      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
+      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
     command: >
-      bash -c "sleep 15; 
-               spark://spark-master:7077/spark-submit
-               --class es.upm.dit.ging.predictor.MakePrediction 
-               --master local[*] 
-               --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 
-               /home/ibdn/BDFI/PracticaCreativaBDFI/flight_prediction/target/scala-2.12/flight_prediction_2.12-0.1.jar show"
+      bash -c "sleep 15; /spark/bin/spark-submit --class es.upm.dit.ging.predictor.MakePrediction --master spark://spark-master:7077 --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 /flight_prediction/target/scala-2.12/flight_prediction_2.12-0.1.jar show"
 
   mongo:
     image: mongo:4.4.29
@@ -111,12 +111,12 @@ services:
     environment:
       KAFKA_BROKER: kafka:9092
       MONGO_URI: mongodb://mongo:27017
-      PROJECT_HOME: /home/ibdn/BDFI/PracticaCreativaBDFI/
+      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa/
     networks:
       - my_network
     volumes:
       - ${PROJECT_HOME}:${PROJECT_HOME}
-    command: bash -c "sleep 15; python3 /home/ibdn/BDFI/PracticaCreativaBDFI/resources/web/predict_flask.py"
+    command: bash -c "sleep 15; python3 /home/ibdn/BDFI/practica_creativa/resources/web/predict_flask.py"
 
 networks:
   my_network:
