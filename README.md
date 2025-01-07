@@ -140,7 +140,8 @@ The following list includes some links with the installation procedure for each 
   Para la parte de docker-compose se realiza con los siguientes comandos:
   ```
 docker exec -it kafka bash
-
+```
+```
  kafka-topics --create \
     --bootstrap-server localhost:9092 \
     --replication-factor 1 \
