@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   zookeeper:
-    image: confluentinc/cp-zookeeper:latest
+    image: confluentinc/cp-zookeeper:5.5.0
     container_name: zookeeper
     environment:
       ZOOKEEPER_CLIENT_PORT: 2181
@@ -12,7 +12,7 @@ services:
       - my_network
 
   kafka:
-    image: confluentinc/cp-kafka:latest
+    image: confluentinc/cp-kafka:7.0.1
     container_name: kafka
     depends_on:
       - zookeeper
@@ -23,10 +23,10 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      KAFKA_CREATE_TOPICS: "flight_delay_classification_request:1:1"
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     networks:
       - my_network
-
+  
   spark-master:
     image: bde2020/spark-master
     container_name: spark-master
@@ -39,8 +39,8 @@ services:
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
-      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
+      - /home/ibdn/BDFI/practica_creativa/flight_prediction:/flight_prediction
+      - /home/ibdn/BDFI/practica_creativa/models:/home/ibdn/BDFI/practica_creativa/models
 
   spark-worker-1:
     image: bde2020/spark-worker
@@ -55,8 +55,8 @@ services:
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
-      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
+      - /home/ibdn/BDFI/practica_creativa/flight_prediction:/flight_prediction
+      - /home/ibdn/BDFI/practica_creativa/models:/home/ibdn/BDFI/practica_creativa/models
 
   spark-worker-2:
     image: bde2020/spark-worker
@@ -71,8 +71,8 @@ services:
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
-      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
+      - /home/ibdn/BDFI/practica_creativa/flight_prediction:/flight_prediction
+      - /home/ibdn/BDFI/practica_creativa/models:/home/ibdn/BDFI/practica_creativa/models
 
   spark-submit:
     image: bde2020/spark-submit
@@ -83,10 +83,12 @@ services:
       - spark-worker-2
     environment:
       SPARK_MASTER: spark://spark-master:7077
-      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa/
+      PROJECT_HOME: /home/ibdn/BDFI/practica_creativa  
     volumes:
-      - ${PROJECT_HOME}/flight_prediction:/flight_prediction
-      - ${PROJECT_HOME}/models:/home/ibdn/BDFI/practica_creativa/models
+      - /home/ibdn/BDFI/practica_creativa/flight_prediction:/flight_prediction
+      - /home/ibdn/BDFI/practica_creativa/models:/home/ibdn/BDFI/practica_creativa/models
+    networks:
+      - my_network
     command: >
       bash -c "sleep 15; /spark/bin/spark-submit --class es.upm.dit.ging.predictor.MakePrediction --master spark://spark-master:7077 --packages org.mongodb.spark:mongo-spark-connector_2.12:10.1.1,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0 /flight_prediction/target/scala-2.12/flight_prediction_2.12-0.1.jar show"
 
@@ -98,7 +100,19 @@ services:
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}:${PROJECT_HOME}
+      - /home/ibdn/BDFI/practica_creativa/data:/home
+
+  mongo-client:
+    image: mongo:4.4.29
+    container_name: mongo-client
+    depends_on:
+      - mongo
+    networks:
+      - my_network
+    volumes:
+      - /home/ibdn/BDFI/practica_creativa/data:/home
+    command: > 
+      bash -c " /home/import_distances.sh"
 
   flask:
     build: ./docker/flask
@@ -115,8 +129,8 @@ services:
     networks:
       - my_network
     volumes:
-      - ${PROJECT_HOME}:${PROJECT_HOME}
-    command: bash -c "sleep 15; python3 /home/ibdn/BDFI/practica_creativa/resources/web/predict_flask.py"
+      - /home/ibdn/BDFI/practica_creativa:/home/ibdn/BDFI/practica_creativa
+    command: bash -c "sleep 45; python3 /home/ibdn/BDFI/practica_creativa/resources/web/predict_flask.py"
 
 networks:
   my_network:
