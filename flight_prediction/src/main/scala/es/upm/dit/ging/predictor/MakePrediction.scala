@@ -13,6 +13,7 @@ object MakePrediction {
   def main(args: Array[String]): Unit = {
     println("Fligth predictor starting...")
 
+    // Se ha cambiado el master de local a la direccion del contenedor, ademas el nombre ahora es mas adecuado al de la practica
     val spark = SparkSession
       .builder
       .appName("FlightPredictionApp")
@@ -20,7 +21,8 @@ object MakePrediction {
       .getOrCreate()
     import spark.implicits._
 
-    //Load the arrival delay bucketizer
+    //Load the arrival delay bucketizer 
+    // Se ha colocado la ruta de la carpeta donde se ejecuta el servicio
     val base_path= "/home/ibdn/BDFI/practica_creativa"
     val arrivalBucketizerPath = "%s/models/arrival_bucketizer_2.0.bin".format(base_path)
     print(arrivalBucketizerPath.toString())
@@ -148,10 +150,11 @@ object MakePrediction {
     //}.start()
 
     // define a streaming query
+    // Se cambia el formato a solo dos option por errores que puede dar muchos option para llegar a la coleccion agile_data_science.flight_delay_classification_response
     val dataStreamWriter = finalPredictions.writeStream
       .format("mongodb")
       .option("spark.mongodb.connection.uri", "mongodb://mongo:27017/agile_data_science.flight_delay_classification_response")
-      .option("checkpointLocation", "/tmp/checkpoints") // Cambiar a una ruta persistente si es necesario
+      .option("checkpointLocation", "/tmp/checkpoints") // Se cambia por comodidad a esta carpeta
       .outputMode("append")
 
 

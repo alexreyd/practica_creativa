@@ -15,6 +15,7 @@ app = Flask(__name__)
 # Ahora en vez de local(no habia nada en el parentesis), el cliente se conecta a la URI del contenedor de Mongo
 client = MongoClient("mongodb://mongo:27017") 
 
+# ELASTIC.URL es el contenedor de mongo tambien ya que es la que busca la query en la BBDD (no se usa localhost ya)
 from pyelasticsearch import ElasticSearch
 elastic = ElasticSearch(config.ELASTIC_URL)
 
