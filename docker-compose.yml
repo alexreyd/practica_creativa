@@ -24,8 +24,11 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1  
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1 
     networks:
       - my_network
+
   
   spark-master:
     image: bde2020/spark-master

@@ -12,7 +12,8 @@ import predict_utils
 # Set up Flask, Mongo and Elasticsearch
 app = Flask(__name__)
 
-client = MongoClient()
+# Ahora en vez de local(no habia nada en el parentesis), el cliente se conecta a la URI del contenedor de Mongo
+client = MongoClient("mongodb://mongo:27017") 
 
 from pyelasticsearch import ElasticSearch
 elastic = ElasticSearch(config.ELASTIC_URL)
@@ -24,6 +25,7 @@ import iso8601
 import datetime
 
 # Setup Kafka
+# Ahora en vez de local (localhost), el cliente se conecta a la URI del contenedor de Kafka
 from kafka import KafkaProducer
 producer = KafkaProducer(bootstrap_servers=['kafka:9092'],api_version=(0,10))
 PREDICTION_TOPIC = 'flight_delay_classification_request'

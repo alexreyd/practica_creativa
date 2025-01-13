@@ -148,20 +148,12 @@ object MakePrediction {
     //}.start()
 
     // define a streaming query
-    val dataStreamWriter = finalPredictions
-
-      //spark.readStream
-
-      //.schema(finalPredictions.schema)
-      //.load()
-      // manipulate your streaming data
-      .writeStream
+    val dataStreamWriter = finalPredictions.writeStream
       .format("mongodb")
-      .option("spark.mongodb.connection.uri", "mongodb://mongo:27017")
-      .option("spark.mongodb.database", "agile_data_science")
-      .option("checkpointLocation", "/tmp")
-      .option("spark.mongodb.collection", "flight_delay_classification_response")
+      .option("spark.mongodb.connection.uri", "mongodb://mongo:27017/agile_data_science.flight_delay_classification_response")
+      .option("checkpointLocation", "/tmp/checkpoints") // Cambiar a una ruta persistente si es necesario
       .outputMode("append")
+
 
     // run the query
     val query = dataStreamWriter.start()
