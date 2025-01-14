@@ -28,8 +28,14 @@ import datetime
 # Setup Kafka
 # Ahora en vez de local (localhost), el cliente se conecta a la URI del contenedor de Kafka
 from kafka import KafkaProducer
-producer = KafkaProducer(bootstrap_servers=['kafka:9092'],api_version=(0,10))
+from kafka import KafkaConsumer
+
+producer = KafkaProducer(
+  bootstrap_servers=['kafka:9092'],
+  api_version=(0,10)
+  )
 PREDICTION_TOPIC = 'flight_delay_classification_request'
+
 
 import uuid
 
@@ -399,6 +405,11 @@ def classify_flight_delays():
   # Add a timestamp
   prediction_features['Timestamp'] = predict_utils.get_current_timestamp()
   
+  cleaned_message = json_util.dumps(prediction_features)
+  # Enviamos al broker de Kafka
+  producer.send(PREDICTION_TOPIC, cleaned_message)
+
+  # Insertamos en mongo
   client.agile_data_science.prediction_tasks.insert_one(
     prediction_features
   )
@@ -492,7 +503,7 @@ def classify_flight_delays_realtime():
   unique_id = str(uuid.uuid4())
   prediction_features['UUID'] = unique_id
   
-  message_bytes = json.dumps(prediction_features).encode()
+  message_bytes = json.dumps(prediction_features).encode('utf-8')
   producer.send(PREDICTION_TOPIC, message_bytes)
 
   response = {"status": "OK", "id": unique_id}
@@ -515,7 +526,27 @@ def flight_delays_page_kafka():
 @app.route("/flights/delays/predict/classify_realtime/response/<unique_id>")
 def classify_flight_delays_realtime_response(unique_id):
   """Serves predictions to polling requestors"""
-  
+  # Tambien guardamos el consumer de Kafka con el topic del resultado
+  consumer = KafkaConsumer(
+    PREDICTION_TOPIC, 
+    bootstrap_servers=['kafka:9092'],
+    group_id='grupo-de-consumers',
+    auto_offset_reset='earliest',
+    enable_auto_commit=True
+  )
+
+  response = {"status": "WAIT", "id": unique_id}
+  # Leemos el mensaje que llega al consumer de Kafka y lo decodificamos, si es el ID que queremos, cambia el estado a Ok y devuelve la respuesta
+  for i, message in enumerate(consumer):
+    response = json.loads(message.value.decode('utf-8'))
+    if response.get("UUID") == unique_id:
+        response["status"] = "OK"
+        response["prediction"] = message.value
+        return json_util.dumps(response)
+    if i >= 20:  # Detener despues de procesar 20 mensajes
+        break
+
+
   prediction = client.agile_data_science.flight_delay_classification_response.find_one(
     {
       "UUID": unique_id
