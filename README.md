@@ -284,6 +284,64 @@ pip install -r requirements.txt -c constraints.txt
 ```
 export PROJECT_HOME=/home/user/Desktop/practica_creativa
 ```
+
+- Google Cloud
+Maquina virtual de 
+Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante.
+Primero docker:
+```
+ sudo apt update
+ sudo apt upgrade -y
+```
+```
+sudo apt remove docker docker-engine docker.io containerd runc
+```
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+```
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+```
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+```
+sudo apt update
+sudo apt install docker-ce=5:27.4.1~3-0~ubuntu-$(lsb_release -cs) docker-ce-cli=5:27.4.1~3-0~ubuntu-$(lsb_release -cs) containerd.io -y
+```
+Y ahora docker-compose:
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+```
+sudo usermod -aG docker $USER
+```
+Ahora git
+```
+sudo apt-get install git
+```
+Ahora sbt:
+```
+echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+```
+```
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x99E82A75642AC823" | gpg --dearmor | sudo tee /usr/share/keyrings/sbt-keyring.gpg > /dev/null
+```
+```
+echo "deb [signed-by=/usr/share/keyrings/sbt-keyring.gpg] https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+```
+```
+sudo apt-get install sbt
+```
+Y finalmente pip:
+```
+sudo apt-get install pip
+```
+
 - Configure airflow environment
 
 ```shell
