@@ -157,16 +157,28 @@ object MakePrediction {
       .option("checkpointLocation", "/tmp/checkpoints") // Se cambia por comodidad a esta carpeta
       .outputMode("append")
 
+    // Stream para Kafka
+    val kafkaStreamWriter = finalPredictions
+      .selectExpr("to_json(struct(*)) AS value") // Convierte los datos en JSON para Kafka
+      .writeStream
+      .format("kafka")
+      .option("kafka.bootstrap.servers", "kafka:9092")
+      .option("topic", "flight_delay_classification_response")
+      .option("checkpointLocation", "/tmp/checkpoints/kafka")
+      .outputMode("append")
 
-    // run the query
-    val query = dataStreamWriter.start()
+    // run both queries
+    val mongoQuery = dataStreamWriter.start()
+    val kafkaQuery = kafkaStreamWriter.start()
+
     // Console Output for predictions
-
     val consoleOutput = finalPredictions.writeStream
       .outputMode("append")
       .format("console")
       .start()
+    mongoQuery.awaitTermination()
+    kafkaQuery.awaitTermination()
     consoleOutput.awaitTermination()
   }
-
+  
 }
