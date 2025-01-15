@@ -271,7 +271,7 @@ spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local
 ```
 
 ### Google Cloud
-- Maquina virtual de ubuntu y 80 GB con HTTP y HTTPS
+- Maquina virtual de ubuntu 22:04 y 80 GB con HTTP y HTTPS
 - Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante.
 Primero docker:
 ```
