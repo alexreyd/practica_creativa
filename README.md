@@ -270,24 +270,9 @@ spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local
 
 ```
 
-### Train the model with Apache Airflow (optional)
-
-- The version of Apache Airflow used is the 2.1.4 and it is installed with pip. For development it uses SQLite as database but it is not recommended for production. For the laboratory SQLite is sufficient.
-
-- Install python libraries for Apache Airflow (suggested Python 3.7)
-
-```shell
-cd resources/airflow
-pip install -r requirements.txt -c constraints.txt
-```
-- Set the `PROJECT_HOME` env variable with the path of you cloned repository, for example:
-```
-export PROJECT_HOME=/home/user/Desktop/practica_creativa
-```
-
 ### Google Cloud
-Maquina virtual de ubuntu y 80 GB con HTTP y HTTPS
-Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante.
+- Maquina virtual de ubuntu y 80 GB con HTTP y HTTPS
+- Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante.
 Primero docker:
 ```
  sudo apt update
@@ -323,7 +308,19 @@ Ahora git
 ```
 sudo apt-get install git
 ```
-Ahora sbt:
+Ahora java primero:
+```
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+```
+```
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+```
+```
+source ~/.bashrc
+```
+Y ahora sbt:
 ```
 echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
 echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
@@ -335,13 +332,29 @@ curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x99E82A75642AC8
 echo "deb [signed-by=/usr/share/keyrings/sbt-keyring.gpg] https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
 ```
 ```
+sudo apt-get update
 sudo apt-get install sbt
 ```
 Y finalmente pip:
 ```
 sudo apt-get install pip
 ```
+- Para hacer los sbt compile y sbt package recordar el sudo primero.
 
+### Train the model with Apache Airflow (optional)
+
+- The version of Apache Airflow used is the 2.1.4 and it is installed with pip. For development it uses SQLite as database but it is not recommended for production. For the laboratory SQLite is sufficient.
+
+- Install python libraries for Apache Airflow (suggested Python 3.7)
+
+```shell
+cd resources/airflow
+pip install -r requirements.txt -c constraints.txt
+```
+- Set the `PROJECT_HOME` env variable with the path of you cloned repository, for example:
+```
+export PROJECT_HOME=/home/user/Desktop/practica_creativa
+```
 - Configure airflow environment
 
 ```shell
