@@ -285,8 +285,8 @@ pip install -r requirements.txt -c constraints.txt
 export PROJECT_HOME=/home/user/Desktop/practica_creativa
 ```
 
-- Google Cloud
-Maquina virtual de 
+### Google Cloud
+Maquina virtual de ubuntu y 80 GB con HTTP y HTTPS
 Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante.
 Primero docker:
 ```
