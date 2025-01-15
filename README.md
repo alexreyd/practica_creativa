@@ -269,10 +269,29 @@ spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local
 
 
 ```
+# Segunda parte
+## Docker Compose
+- Antes de la ejecución de estos comandos se tendrá que hacer un sbt compile y sbt package dentro de la carpeta /practica_creativa/flight_prediction.
+Para desplegarlo únicamente habrá que ejecutar el comando docker-compose en la carpeta raiz de /practica_creativa.
+```
+docker-compose up --build
+```
+Para cerrarlo habría que ejecutar
+```
+docker-compose down
+```
+Herramientas para el análisis de los estados de los contenedores útiles son los siguientes. El primero ve los logs del contenedor, el segundo te permite entrar y hacer búsquedas directamente en el contenedor deseado y el tercero analiza los estados de los contenedores.
+```
+docker logs <CONTAINER_NAME>
+docker exec -it <CONTAINER_NAME> bash
+docker ps
+```
+## Kafka
+Ya está empleado el producer y consumer de Kafka dentro del archivo MakePrediction.scala y predict_flask.py, por lo que los resultados que aparecen en Flask se obtienen a través del consumer.
 
-### Google Cloud
+## Google Cloud
 - Maquina virtual de ubuntu 22:04 y 80 GB con HTTP y HTTPS
-- Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante.
+- Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante (o sudo su primero).
 Primero docker:
 ```
  sudo apt update
@@ -339,7 +358,7 @@ Y finalmente pip:
 ```
 sudo apt-get install pip
 ```
-- Para hacer los sbt compile y sbt package recordar el sudo primero.
+- Para hacer los sbt compile y sbt package recordar el sudo primero (o hacer sudo su antes de todo).
 
 ### Train the model with Apache Airflow (optional)
 
