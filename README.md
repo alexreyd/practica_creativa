@@ -297,6 +297,7 @@ Primero docker:
  sudo apt update
  sudo apt upgrade -y
 ```
+Este comando es por si se ha descargado una versión anterior que no se deseaba
 ```
 sudo apt remove docker docker-engine docker.io containerd runc
 ```
@@ -311,7 +312,7 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] 
 ```
 ```
 sudo apt update
-sudo apt install docker-ce=5:27.4.1~3-0~ubuntu-$(lsb_release -cs) docker-ce-cli=5:27.4.1~3-0~ubuntu-$(lsb_release -cs) containerd.io -y
+sudo apt install docker.io
 ```
 Y ahora docker-compose:
 ```
