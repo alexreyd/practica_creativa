@@ -1152,3 +1152,41 @@ AIRFLOW_CTX_DAG_RUN_ID=scheduled__2016-12-06T00:00:00+00:00
 [2025-01-16 19:48:22,513] {subprocess.py:78} INFO - 25/01/16 19:48:22 INFO DAGScheduler: Job 32 finished: runJob at SparkHadoopWriter.scala:83, took 0.308943 s
 [2025-01-16 19:48:22,513] {subprocess.py:78} INFO - 25/01/16 19:48:22 INFO SparkHadoopWriter: Start to commit write Job job_202501161948221682436204504111042_0112.
 [2025-01-16 19:48:22,557] {subprocess.py:78} INFO - 25/01/16 19:48:22 INFO SparkHadoopWriter: Write Job job_202501161948221682436204504111042_0112 committed. Elapsed time: 48 ms.
+[2025-01-16 19:48:22,908] {subprocess.py:78} INFO - Traceback (most recent call last):
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -   File "/home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py", line 190, in <module>
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -     main(sys.argv[1])
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -   File "/home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py", line 127, in main
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -     string_indexer_model.write().overwrite().save(string_indexer_output_path)
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -   File "/home/ibdn/.sdkman/candidates/spark/current/python/pyspark/ml/util.py", line 197, in save
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -     self._jwrite.save(path)
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -   File "/home/ibdn/.sdkman/candidates/spark/current/python/lib/py4j-0.10.9.5-src.zip/py4j/java_gateway.py", line 1321, in __call__
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -   File "/home/ibdn/.sdkman/candidates/spark/current/python/pyspark/sql/utils.py", line 196, in deco
+[2025-01-16 19:48:22,910] {subprocess.py:78} INFO -     raise converted from None
+[2025-01-16 19:48:22,940] {subprocess.py:78} INFO - pyspark.sql.utils.AnalysisException: path file:/home/ibdn/BDFI/practica_creativa/models/string_indexer_model_Carrier.bin/data already exists.
+[2025-01-16 19:48:23,218] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-01-16 19:48:23,255] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO SparkUI: Stopped Spark web UI at http://10.0.2.15:4040
+[2025-01-16 19:48:23,311] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-01-16 19:48:23,356] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO MemoryStore: MemoryStore cleared
+[2025-01-16 19:48:23,358] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO BlockManager: BlockManager stopped
+[2025-01-16 19:48:23,366] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-01-16 19:48:23,367] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-01-16 19:48:23,425] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO SparkContext: Successfully stopped SparkContext
+[2025-01-16 19:48:23,426] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO ShutdownHookManager: Shutdown hook called
+[2025-01-16 19:48:23,431] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-9ca54a13-29dd-4095-8482-aad551c6d7cc/pyspark-5fd73fec-b58a-41d3-9338-a8ac0d43c608
+[2025-01-16 19:48:23,457] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-9ca54a13-29dd-4095-8482-aad551c6d7cc
+[2025-01-16 19:48:23,464] {subprocess.py:78} INFO - 25/01/16 19:48:23 INFO ShutdownHookManager: Deleting directory /tmp/spark-295eb3ed-aeba-4d52-9b90-069d38b44526
+[2025-01-16 19:48:23,663] {subprocess.py:82} INFO - Command exited with return code 1
+[2025-01-16 19:48:23,667] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 176, in execute
+    raise AirflowException('Bash command failed. The command returned a non-zero exit code.')
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code.
+[2025-01-16 19:48:23,674] {taskinstance.py:1513} INFO - Marking task as UP_FOR_RETRY. dag_id=agile_data_science_batch_prediction_model_training, task_id=pyspark_train_classifier_model, execution_date=20161206T000000, start_date=20250116T184503, end_date=20250116T184823
+[2025-01-16 19:48:23,754] {local_task_job.py:151} INFO - Task exited with return code 1
+[2025-01-16 19:48:23,763] {local_task_job.py:261} INFO - 0 downstream tasks scheduled from follow-on schedule check

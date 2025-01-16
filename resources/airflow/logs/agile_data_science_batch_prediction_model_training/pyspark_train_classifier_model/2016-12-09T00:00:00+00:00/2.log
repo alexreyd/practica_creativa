@@ -1,0 +1,84 @@
+[2025-01-16 19:48:24,880] {taskinstance.py:897} INFO - Dependencies not met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-09T00:00:00+00:00 [up_for_retry]>, dependency 'Not In Retry Period' FAILED: Task is not ready for retry yet but will be retried automatically. Current date is 2025-01-16T18:48:24.880348+00:00 and task will be retried at 2025-01-16T18:49:55.787489+00:00.
+[2025-01-16 19:48:24,880] {local_task_job.py:96} INFO - Task is not able to be run
+[2025-01-16 19:52:27,194] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-09T00:00:00+00:00 [queued]>
+[2025-01-16 19:52:27,197] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-09T00:00:00+00:00 [queued]>
+[2025-01-16 19:52:27,198] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-16 19:52:27,198] {taskinstance.py:1096} INFO - Starting attempt 2 of 4
+[2025-01-16 19:52:27,198] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-16 19:52:27,209] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): pyspark_train_classifier_model> on 2016-12-09T00:00:00+00:00
+[2025-01-16 19:52:27,211] {standard_task_runner.py:52} INFO - Started process 326713 to run task
+[2025-01-16 19:52:27,213] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'agile_data_science_batch_prediction_model_training', 'pyspark_train_classifier_model', '2016-12-09T00:00:00+00:00', '--job-id', '29', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/setup.py', '--cfg-path', '/tmp/tmpf67e1ff6', '--error-file', '/tmp/tmptjky2lxx']
+[2025-01-16 19:52:27,214] {standard_task_runner.py:77} INFO - Job 29: Subtask pyspark_train_classifier_model
+[2025-01-16 19:52:27,248] {logging_mixin.py:109} INFO - Running <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-09T00:00:00+00:00 [running]> on host ibdn-VirtualBox
+[2025-01-16 19:52:27,281] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=agile_data_science_batch_prediction_model_training
+AIRFLOW_CTX_TASK_ID=pyspark_train_classifier_model
+AIRFLOW_CTX_EXECUTION_DATE=2016-12-09T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2016-12-09T00:00:00+00:00
+[2025-01-16 19:52:27,283] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2025-01-16 19:52:27,284] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\nspark-submit --master local[8]   /home/ibdn/BDFI/practica_creativa//resources/train_spark_mllib_model.py   /home/ibdn/BDFI/practica_creativa/']
+[2025-01-16 19:52:27,290] {subprocess.py:74} INFO - Output:
+[2025-01-16 19:52:29,207] {subprocess.py:78} INFO - 25/01/16 19:52:29 WARN Utils: Your hostname, ibdn-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+[2025-01-16 19:52:29,207] {subprocess.py:78} INFO - 25/01/16 19:52:29 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-01-16 19:52:30,267] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SparkContext: Running Spark version 3.3.0
+[2025-01-16 19:52:30,424] {subprocess.py:78} INFO - 25/01/16 19:52:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-16 19:52:30,604] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO ResourceUtils: ==============================================================
+[2025-01-16 19:52:30,610] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-01-16 19:52:30,611] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO ResourceUtils: ==============================================================
+[2025-01-16 19:52:30,613] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SparkContext: Submitted application: train_spark_mllib_model.py
+[2025-01-16 19:52:30,634] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-01-16 19:52:30,662] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO ResourceProfile: Limiting resource is cpu
+[2025-01-16 19:52:30,663] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-01-16 19:52:30,710] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SecurityManager: Changing view acls to: ibdn
+[2025-01-16 19:52:30,711] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SecurityManager: Changing modify acls to: ibdn
+[2025-01-16 19:52:30,711] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SecurityManager: Changing view acls groups to:
+[2025-01-16 19:52:30,712] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SecurityManager: Changing modify acls groups to:
+[2025-01-16 19:52:30,712] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ibdn); groups with view permissions: Set(); users  with modify permissions: Set(ibdn); groups with modify permissions: Set()
+[2025-01-16 19:52:30,982] {subprocess.py:78} INFO - 25/01/16 19:52:30 INFO Utils: Successfully started service 'sparkDriver' on port 36795.
+[2025-01-16 19:52:31,051] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO SparkEnv: Registering MapOutputTracker
+[2025-01-16 19:52:31,090] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO SparkEnv: Registering BlockManagerMaster
+[2025-01-16 19:52:31,133] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-01-16 19:52:31,133] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-01-16 19:52:31,141] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-01-16 19:52:31,161] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-30d31dc3-41bf-49c1-88d0-75af54a9e11d
+[2025-01-16 19:52:31,172] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-01-16 19:52:31,191] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-01-16 19:52:31,413] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-01-16 19:52:31,597] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO Executor: Starting executor ID driver on host 10.0.2.15
+[2025-01-16 19:52:31,615] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-01-16 19:52:31,642] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42497.
+[2025-01-16 19:52:31,643] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO NettyBlockTransferService: Server created on 10.0.2.15:42497
+[2025-01-16 19:52:31,643] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-01-16 19:52:31,650] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.0.2.15, 42497, None)
+[2025-01-16 19:52:31,655] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManagerMasterEndpoint: Registering block manager 10.0.2.15:42497 with 434.4 MiB RAM, BlockManagerId(driver, 10.0.2.15, 42497, None)
+[2025-01-16 19:52:31,661] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.0.2.15, 42497, None)
+[2025-01-16 19:52:31,661] {subprocess.py:78} INFO - 25/01/16 19:52:31 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.0.2.15, 42497, None)
+[2025-01-16 19:52:32,191] {subprocess.py:78} INFO - 25/01/16 19:52:32 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-01-16 19:52:32,214] {subprocess.py:78} INFO - 25/01/16 19:52:32 INFO SharedState: Warehouse path is 'file:/tmp/airflowtmprxhf13yx/spark-warehouse'.
+[2025-01-16 19:52:32,240] {local_task_job.py:204} WARNING - Recorded pid 326756 does not match the current pid 326713
+[2025-01-16 19:52:32,250] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 326713
+[2025-01-16 19:52:32,251] {taskinstance.py:1236} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-16 19:52:32,251] {subprocess.py:88} INFO - Sending SIGTERM signal to process group
+[2025-01-16 19:52:32,254] {taskinstance.py:1463} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1165, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1283, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1313, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 171, in execute
+    output_encoding=self.output_encoding,
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/hooks/subprocess.py", line 76, in run_command
+    for raw_line in iter(self.sub_process.stdout.readline, b''):
+  File "/home/ibdn/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1238, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-01-16 19:52:32,261] {taskinstance.py:1513} INFO - Marking task as UP_FOR_RETRY. dag_id=agile_data_science_batch_prediction_model_training, task_id=pyspark_train_classifier_model, execution_date=20161209T000000, start_date=20250116T185228, end_date=20250116T185232
+[2025-01-16 19:52:32,319] {process_utils.py:66} INFO - Process psutil.Process(pid=326713, status='terminated', exitcode=1, started='19:52:26') (326713) terminated with exit code 1
+[2025-01-16 19:52:32,320] {process_utils.py:66} INFO - Process psutil.Process(pid=326839, status='terminated', started='19:52:29') (326839) terminated with exit code None
+[2025-01-16 19:52:32,940] {process_utils.py:66} INFO - Process psutil.Process(pid=326715, status='terminated', started='19:52:27') (326715) terminated with exit code None
