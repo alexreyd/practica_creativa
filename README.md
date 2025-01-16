@@ -385,10 +385,10 @@ mkdir $AIRFLOW_HOME/plugins
 
 airflow users create \
     --username admin \
-    --firstname Jack \
-    --lastname  Sparrow\
+    --firstname Alejandro \
+    --lastname  Rey\
     --role Admin \
-    --email example@mail.org
+    --email axreydz@gmail.com
 ```
 - Start airflow scheduler and webserver
 ```shell
