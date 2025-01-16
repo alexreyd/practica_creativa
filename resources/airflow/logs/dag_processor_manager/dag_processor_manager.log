@@ -170,3 +170,35 @@ File Path                                                          PID    Runtim
 -----------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
 /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py                           1           0  0.11s           2025-01-16T18:42:29
 ================================================================================
+[2025-01-16 19:44:53,887] {manager.py:585} INFO - Exiting gracefully upon receiving signal 15
+[2025-01-16 19:44:54,001] {manager.py:604} INFO - Processing files using up to 1 processes at a time 
+[2025-01-16 19:44:54,001] {manager.py:605} INFO - Process each file at most once every 30 seconds
+[2025-01-16 19:44:54,001] {manager.py:607} INFO - Checking for new files in /home/ibdn/BDFI/practica_creativa/resources/airflow/dags every 300 seconds
+[2025-01-16 19:44:54,001] {manager.py:754} INFO - Searching for files in /home/ibdn/BDFI/practica_creativa/resources/airflow/dags
+[2025-01-16 19:44:54,002] {manager.py:757} INFO - There are 1 files in /home/ibdn/BDFI/practica_creativa/resources/airflow/dags
+[2025-01-16 19:44:54,088] {manager.py:1128} INFO - Finding 'running' jobs without a recent heartbeat
+[2025-01-16 19:44:54,089] {manager.py:1132} INFO - Failing jobs without heartbeat after 2025-01-16 18:39:54.089062+00:00
+[2025-01-16 19:44:54,238] {manager.py:861} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py                           1           0  0.14s           2025-01-16T18:44:54
+================================================================================
+[2025-01-16 19:44:57,193] {manager.py:585} INFO - Exiting gracefully upon receiving signal 15
+[2025-01-16 19:44:57,336] {manager.py:604} INFO - Processing files using up to 1 processes at a time 
+[2025-01-16 19:44:57,337] {manager.py:605} INFO - Process each file at most once every 30 seconds
+[2025-01-16 19:44:57,337] {manager.py:607} INFO - Checking for new files in /home/ibdn/BDFI/practica_creativa/resources/airflow/dags every 300 seconds
+[2025-01-16 19:44:57,337] {manager.py:754} INFO - Searching for files in /home/ibdn/BDFI/practica_creativa/resources/airflow/dags
+[2025-01-16 19:44:57,338] {manager.py:757} INFO - There are 1 files in /home/ibdn/BDFI/practica_creativa/resources/airflow/dags
+[2025-01-16 19:44:57,444] {manager.py:1128} INFO - Finding 'running' jobs without a recent heartbeat
+[2025-01-16 19:44:57,445] {manager.py:1132} INFO - Failing jobs without heartbeat after 2025-01-16 18:39:57.445549+00:00
+[2025-01-16 19:44:57,673] {manager.py:861} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py                           1           0  0.22s           2025-01-16T18:44:57
+================================================================================

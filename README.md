@@ -269,6 +269,97 @@ spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local
 
 
 ```
+# Segunda parte
+## Docker Compose
+- Antes de la ejecución de estos comandos se tendrá que hacer un sbt compile y sbt package dentro de la carpeta /practica_creativa/flight_prediction.
+Para desplegarlo únicamente habrá que ejecutar el comando docker-compose en la carpeta raiz de /practica_creativa.
+```
+docker-compose up --build
+```
+Para cerrarlo habría que ejecutar
+```
+docker-compose down
+```
+Herramientas para el análisis de los estados de los contenedores útiles son los siguientes. El primero ve los logs del contenedor, el segundo te permite entrar y hacer búsquedas directamente en el contenedor deseado y el tercero analiza los estados de los contenedores.
+```
+docker logs <CONTAINER_NAME>
+docker exec -it <CONTAINER_NAME> bash
+docker ps
+```
+## Kafka
+Ya está empleado el producer y consumer de Kafka dentro del archivo MakePrediction.scala y predict_flask.py, por lo que los resultados que aparecen en Flask se obtienen a través del consumer.
+
+## Google Cloud
+- Maquina virtual de ubuntu 22:04 y 80 GB con HTTP y HTTPS
+- Hay que instalar docker, docker-compose, git, sbt y pip a las versiones empleadas. Todos los comandos apt-get install tienen que ir con sudo delante (o sudo su primero).
+Primero docker:
+```
+ sudo apt update
+ sudo apt upgrade -y
+```
+Este comando es por si se ha descargado una versión anterior que no se deseaba
+```
+sudo apt remove docker docker-engine docker.io containerd runc
+```
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+```
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+```
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+```
+sudo apt update
+sudo apt install docker.io
+```
+Y ahora docker-compose:
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+```
+sudo usermod -aG docker $USER
+```
+Ahora git
+```
+sudo apt-get install git
+```
+Ahora java primero:
+```
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+```
+```
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+```
+```
+source ~/.bashrc
+```
+Y ahora sbt:
+```
+echo "deb https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+echo "deb https://repo.scala-sbt.org/scalasbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+```
+```
+curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x99E82A75642AC823" | gpg --dearmor | sudo tee /usr/share/keyrings/sbt-keyring.gpg > /dev/null
+```
+```
+echo "deb [signed-by=/usr/share/keyrings/sbt-keyring.gpg] https://repo.scala-sbt.org/scalasbt/debian all main" | sudo tee /etc/apt/sources.list.d/sbt.list
+```
+```
+sudo apt-get update
+sudo apt-get install sbt
+```
+Y finalmente pip:
+```
+sudo apt-get install pip
+```
+- Para hacer los sbt compile y sbt package recordar el sudo primero (o hacer sudo su antes de todo).
 
 ### Train the model with Apache Airflow (optional)
 
@@ -282,22 +373,26 @@ pip install -r requirements.txt -c constraints.txt
 ```
 - Set the `PROJECT_HOME` env variable with the path of you cloned repository, for example:
 ```
-export PROJECT_HOME=/home/user/Desktop/practica_creativa
+export PROJECT_HOME=/home/ibdn/BDFI/practica_creativa
 ```
 - Configure airflow environment
 
 ```shell
-export AIRFLOW_HOME=~/airflow
+export AIRFLOW_HOME=/home/ibdn/BDFI/practica_creativa/resources/airflow
 mkdir $AIRFLOW_HOME/dags
 mkdir $AIRFLOW_HOME/logs
 mkdir $AIRFLOW_HOME/plugins
 
 airflow users create \
     --username admin \
-    --firstname Jack \
-    --lastname  Sparrow\
+    --firstname Alejandro \
+    --lastname  Rey\
     --role Admin \
-    --email example@mail.org
+    --email axreydz@gmail.com
+```
+Ahora tendríamos que iniciar airflow, primero ejecutamos lo siguiente:
+```
+airflow db init
 ```
 - Start airflow scheduler and webserver
 ```shell
