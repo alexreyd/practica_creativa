@@ -378,7 +378,7 @@ export PROJECT_HOME=/home/ibdn/BDFI/practica_creativa
 - Configure airflow environment
 
 ```shell
-export AIRFLOW_HOME=~/airflow
+export AIRFLOW_HOME=/home/ibdn/BDFI/practica_creativa/resources/airflow
 mkdir $AIRFLOW_HOME/dags
 mkdir $AIRFLOW_HOME/logs
 mkdir $AIRFLOW_HOME/plugins
