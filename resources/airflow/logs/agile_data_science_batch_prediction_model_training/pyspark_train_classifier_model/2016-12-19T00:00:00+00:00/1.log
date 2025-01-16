@@ -1,0 +1,24 @@
+[2025-01-17 00:41:29,501] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-19T00:00:00+00:00 [queued]>
+[2025-01-17 00:41:29,511] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-19T00:00:00+00:00 [queued]>
+[2025-01-17 00:41:29,511] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-17 00:41:29,512] {taskinstance.py:1096} INFO - Starting attempt 1 of 4
+[2025-01-17 00:41:29,512] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-17 00:41:29,539] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): pyspark_train_classifier_model> on 2016-12-19T00:00:00+00:00
+[2025-01-17 00:41:29,543] {standard_task_runner.py:52} INFO - Started process 335281 to run task
+[2025-01-17 00:41:29,549] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'agile_data_science_batch_prediction_model_training', 'pyspark_train_classifier_model', '2016-12-19T00:00:00+00:00', '--job-id', '50', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/setup.py', '--cfg-path', '/tmp/tmpq9vbhpj9', '--error-file', '/tmp/tmpiwxfqfcc']
+[2025-01-17 00:41:29,551] {standard_task_runner.py:77} INFO - Job 50: Subtask pyspark_train_classifier_model
+[2025-01-17 00:41:29,603] {logging_mixin.py:109} INFO - Running <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-19T00:00:00+00:00 [running]> on host ibdn-VirtualBox
+[2025-01-17 00:41:29,642] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=agile_data_science_batch_prediction_model_training
+AIRFLOW_CTX_TASK_ID=pyspark_train_classifier_model
+AIRFLOW_CTX_EXECUTION_DATE=2016-12-19T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2016-12-19T00:00:00+00:00
+[2025-01-17 00:41:29,645] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2025-01-17 00:41:29,646] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\nspark-submit --master local[8]   /home/ibdn/BDFI/practica_creativa//resources/train_spark_mllib_model.py   /home/ibdn/BDFI/practica_creativa/']
+[2025-01-17 00:41:29,661] {subprocess.py:74} INFO - Output:
+[2025-01-17 00:41:32,494] {subprocess.py:78} INFO - 25/01/17 00:41:32 WARN Utils: Your hostname, ibdn-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+[2025-01-17 00:41:32,502] {subprocess.py:78} INFO - 25/01/17 00:41:32 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address

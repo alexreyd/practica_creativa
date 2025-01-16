@@ -1,0 +1,67 @@
+[2025-01-17 00:41:16,706] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-11T00:00:00+00:00 [queued]>
+[2025-01-17 00:41:16,710] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-11T00:00:00+00:00 [queued]>
+[2025-01-17 00:41:16,710] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-17 00:41:16,711] {taskinstance.py:1096} INFO - Starting attempt 4 of 4
+[2025-01-17 00:41:16,711] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-17 00:41:16,728] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): pyspark_train_classifier_model> on 2016-12-11T00:00:00+00:00
+[2025-01-17 00:41:16,734] {standard_task_runner.py:52} INFO - Started process 334946 to run task
+[2025-01-17 00:41:16,781] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'agile_data_science_batch_prediction_model_training', 'pyspark_train_classifier_model', '2016-12-11T00:00:00+00:00', '--job-id', '46', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/setup.py', '--cfg-path', '/tmp/tmpci8gkdln', '--error-file', '/tmp/tmprk0lwwlu']
+[2025-01-17 00:41:16,781] {standard_task_runner.py:77} INFO - Job 46: Subtask pyspark_train_classifier_model
+[2025-01-17 00:41:16,857] {logging_mixin.py:109} INFO - Running <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-11T00:00:00+00:00 [running]> on host ibdn-VirtualBox
+[2025-01-17 00:41:16,904] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=agile_data_science_batch_prediction_model_training
+AIRFLOW_CTX_TASK_ID=pyspark_train_classifier_model
+AIRFLOW_CTX_EXECUTION_DATE=2016-12-11T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2016-12-11T00:00:00+00:00
+[2025-01-17 00:41:16,906] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2025-01-17 00:41:16,906] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\nspark-submit --master local[8]   /home/ibdn/BDFI/practica_creativa//resources/train_spark_mllib_model.py   /home/ibdn/BDFI/practica_creativa/']
+[2025-01-17 00:41:16,913] {subprocess.py:74} INFO - Output:
+[2025-01-17 00:41:19,205] {subprocess.py:78} INFO - 25/01/17 00:41:19 WARN Utils: Your hostname, ibdn-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+[2025-01-17 00:41:19,277] {subprocess.py:78} INFO - 25/01/17 00:41:19 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-01-17 00:41:20,493] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO SparkContext: Running Spark version 3.3.0
+[2025-01-17 00:41:20,670] {subprocess.py:78} INFO - 25/01/17 00:41:20 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-17 00:41:20,926] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO ResourceUtils: ==============================================================
+[2025-01-17 00:41:20,928] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-01-17 00:41:20,928] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO ResourceUtils: ==============================================================
+[2025-01-17 00:41:20,928] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO SparkContext: Submitted application: train_spark_mllib_model.py
+[2025-01-17 00:41:20,959] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-01-17 00:41:20,981] {subprocess.py:78} INFO - 25/01/17 00:41:20 INFO ResourceProfile: Limiting resource is cpu
+[2025-01-17 00:41:21,010] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-01-17 00:41:21,169] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SecurityManager: Changing view acls to: ibdn
+[2025-01-17 00:41:21,197] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SecurityManager: Changing modify acls to: ibdn
+[2025-01-17 00:41:21,197] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SecurityManager: Changing view acls groups to:
+[2025-01-17 00:41:21,197] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SecurityManager: Changing modify acls groups to:
+[2025-01-17 00:41:21,197] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ibdn); groups with view permissions: Set(); users  with modify permissions: Set(ibdn); groups with modify permissions: Set()
+[2025-01-17 00:41:21,795] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO Utils: Successfully started service 'sparkDriver' on port 46241.
+[2025-01-17 00:41:21,822] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SparkEnv: Registering MapOutputTracker
+[2025-01-17 00:41:21,869] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SparkEnv: Registering BlockManagerMaster
+[2025-01-17 00:41:21,902] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-01-17 00:41:21,903] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-01-17 00:41:21,922] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-01-17 00:41:21,971] {subprocess.py:78} INFO - 25/01/17 00:41:21 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-4ed1fd9c-1f1f-4384-9bef-08cc4117a66f
+[2025-01-17 00:41:22,011] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-01-17 00:41:22,047] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-01-17 00:41:22,498] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-01-17 00:41:22,937] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO Executor: Starting executor ID driver on host 10.0.2.15
+[2025-01-17 00:41:22,950] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-01-17 00:41:22,972] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36045.
+[2025-01-17 00:41:22,973] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO NettyBlockTransferService: Server created on 10.0.2.15:36045
+[2025-01-17 00:41:22,977] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-01-17 00:41:22,986] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.0.2.15, 36045, None)
+[2025-01-17 00:41:22,992] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO BlockManagerMasterEndpoint: Registering block manager 10.0.2.15:36045 with 434.4 MiB RAM, BlockManagerId(driver, 10.0.2.15, 36045, None)
+[2025-01-17 00:41:22,995] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.0.2.15, 36045, None)
+[2025-01-17 00:41:22,996] {subprocess.py:78} INFO - 25/01/17 00:41:22 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.0.2.15, 36045, None)
+[2025-01-17 00:41:23,548] {subprocess.py:78} INFO - 25/01/17 00:41:23 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-01-17 00:41:23,560] {subprocess.py:78} INFO - 25/01/17 00:41:23 INFO SharedState: Warehouse path is 'file:/tmp/airflowtmph_5z1y2_/spark-warehouse'.
+[2025-01-17 00:41:25,263] {subprocess.py:78} INFO - 25/01/17 00:41:25 INFO InMemoryFileIndex: It took 108 ms to list leaf files for 1 paths.
+[2025-01-17 00:41:26,818] {local_task_job.py:209} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-01-17 00:41:26,842] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 334946
+[2025-01-17 00:41:26,842] {taskinstance.py:1236} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-01-17 00:41:26,843] {subprocess.py:88} INFO - Sending SIGTERM signal to process group
+[2025-01-17 00:41:27,210] {process_utils.py:66} INFO - Process psutil.Process(pid=334946, status='terminated', exitcode=0, started='00:41:15') (334946) terminated with exit code 0
+[2025-01-17 00:41:27,210] {process_utils.py:66} INFO - Process psutil.Process(pid=335038, status='terminated', started='00:41:19') (335038) terminated with exit code None
+[2025-01-17 00:41:27,470] {process_utils.py:66} INFO - Process psutil.Process(pid=334950, status='terminated', started='00:41:16') (334950) terminated with exit code None

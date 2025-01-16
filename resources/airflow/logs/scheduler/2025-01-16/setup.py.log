@@ -306,3 +306,38 @@
 [2025-01-16 19:52:27,342] {logging_mixin.py:109} INFO - [2025-01-16 19:52:27,342] {dag.py:1834} INFO - Sync 1 DAGs
 [2025-01-16 19:52:27,347] {logging_mixin.py:109} INFO - [2025-01-16 19:52:27,347] {dag.py:2287} INFO - Setting next_dagrun for agile_data_science_batch_prediction_model_training to 2016-12-14 00:00:00+00:00
 [2025-01-16 19:52:27,356] {processor.py:170} INFO - Processing /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py took 0.029 seconds
+[2025-01-16 19:53:59,278] {processor.py:162} INFO - Started process (PID=328578) to work on /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 19:53:59,280] {processor.py:613} INFO - Processing file /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py for tasks to queue
+[2025-01-16 19:53:59,280] {logging_mixin.py:109} INFO - [2025-01-16 19:53:59,280] {dagbag.py:496} INFO - Filling up the DagBag from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 19:53:59,285] {processor.py:623} INFO - DAG(s) dict_keys(['agile_data_science_batch_prediction_model_training']) retrieved from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 19:53:59,292] {logging_mixin.py:109} INFO - [2025-01-16 19:53:59,292] {dag.py:1834} INFO - Sync 1 DAGs
+[2025-01-16 19:53:59,298] {logging_mixin.py:109} INFO - [2025-01-16 19:53:59,298] {dag.py:2287} INFO - Setting next_dagrun for agile_data_science_batch_prediction_model_training to 2016-12-15 00:00:00+00:00
+[2025-01-16 19:53:59,308] {processor.py:170} INFO - Processing /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py took 0.031 seconds
+[2025-01-16 19:58:40,846] {processor.py:162} INFO - Started process (PID=329681) to work on /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 19:58:40,860] {processor.py:613} INFO - Processing file /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py for tasks to queue
+[2025-01-16 19:58:40,862] {logging_mixin.py:109} INFO - [2025-01-16 19:58:40,861] {dagbag.py:496} INFO - Filling up the DagBag from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 19:58:40,887] {processor.py:623} INFO - DAG(s) dict_keys(['agile_data_science_batch_prediction_model_training']) retrieved from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 19:58:40,936] {logging_mixin.py:109} INFO - [2025-01-16 19:58:40,936] {dag.py:1834} INFO - Sync 1 DAGs
+[2025-01-16 19:58:40,990] {logging_mixin.py:109} INFO - [2025-01-16 19:58:40,984] {dag.py:2287} INFO - Setting next_dagrun for agile_data_science_batch_prediction_model_training to 2016-12-16 00:00:00+00:00
+[2025-01-16 19:58:41,044] {processor.py:170} INFO - Processing /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py took 0.204 seconds
+[2025-01-16 20:08:31,735] {processor.py:162} INFO - Started process (PID=332085) to work on /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 20:08:31,743] {processor.py:613} INFO - Processing file /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py for tasks to queue
+[2025-01-16 20:08:31,745] {logging_mixin.py:109} INFO - [2025-01-16 20:08:31,745] {dagbag.py:496} INFO - Filling up the DagBag from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 20:08:31,768] {processor.py:623} INFO - DAG(s) dict_keys(['agile_data_science_batch_prediction_model_training']) retrieved from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-16 20:08:31,797] {logging_mixin.py:109} INFO - [2025-01-16 20:08:31,796] {dag.py:1834} INFO - Sync 1 DAGs
+[2025-01-16 20:08:31,818] {logging_mixin.py:109} INFO - [2025-01-16 20:08:31,818] {dag.py:2287} INFO - Setting next_dagrun for agile_data_science_batch_prediction_model_training to 2016-12-17 00:00:00+00:00
+[2025-01-16 20:08:31,874] {processor.py:170} INFO - Processing /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py took 0.145 seconds
+[2025-01-17 00:41:09,605] {processor.py:162} INFO - Started process (PID=334842) to work on /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-17 00:41:09,608] {processor.py:613} INFO - Processing file /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py for tasks to queue
+[2025-01-17 00:41:09,609] {logging_mixin.py:109} INFO - [2025-01-17 00:41:09,609] {dagbag.py:496} INFO - Filling up the DagBag from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-17 00:41:09,624] {processor.py:623} INFO - DAG(s) dict_keys(['agile_data_science_batch_prediction_model_training']) retrieved from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-17 00:41:09,642] {logging_mixin.py:109} INFO - [2025-01-17 00:41:09,642] {dag.py:1834} INFO - Sync 1 DAGs
+[2025-01-17 00:41:09,656] {logging_mixin.py:109} INFO - [2025-01-17 00:41:09,655] {dag.py:2287} INFO - Setting next_dagrun for agile_data_science_batch_prediction_model_training to 2016-12-18 00:00:00+00:00
+[2025-01-17 00:41:09,680] {processor.py:170} INFO - Processing /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py took 0.072 seconds
+[2025-01-17 00:41:15,323] {processor.py:162} INFO - Started process (PID=334935) to work on /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-17 00:41:15,324] {processor.py:613} INFO - Processing file /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py for tasks to queue
+[2025-01-17 00:41:15,339] {logging_mixin.py:109} INFO - [2025-01-17 00:41:15,335] {dagbag.py:496} INFO - Filling up the DagBag from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-17 00:41:15,465] {processor.py:623} INFO - DAG(s) dict_keys(['agile_data_science_batch_prediction_model_training']) retrieved from /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py
+[2025-01-17 00:41:15,649] {logging_mixin.py:109} INFO - [2025-01-17 00:41:15,649] {dag.py:1834} INFO - Sync 1 DAGs
+[2025-01-17 00:41:15,715] {logging_mixin.py:109} INFO - [2025-01-17 00:41:15,715] {dag.py:2287} INFO - Setting next_dagrun for agile_data_science_batch_prediction_model_training to 2016-12-19 00:00:00+00:00
+[2025-01-17 00:41:15,768] {processor.py:170} INFO - Processing /home/ibdn/BDFI/practica_creativa/resources/airflow/dags/setup.py took 0.449 seconds
