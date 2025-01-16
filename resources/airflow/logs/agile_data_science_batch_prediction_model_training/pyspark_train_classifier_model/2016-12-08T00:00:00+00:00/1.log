@@ -1,0 +1,756 @@
+[2025-01-16 19:41:10,065] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-08T00:00:00+00:00 [queued]>
+[2025-01-16 19:41:10,069] {taskinstance.py:903} INFO - Dependencies all met for <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-08T00:00:00+00:00 [queued]>
+[2025-01-16 19:41:10,069] {taskinstance.py:1095} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-16 19:41:10,069] {taskinstance.py:1096} INFO - Starting attempt 1 of 4
+[2025-01-16 19:41:10,069] {taskinstance.py:1097} INFO - 
+--------------------------------------------------------------------------------
+[2025-01-16 19:41:10,093] {taskinstance.py:1115} INFO - Executing <Task(BashOperator): pyspark_train_classifier_model> on 2016-12-08T00:00:00+00:00
+[2025-01-16 19:41:10,095] {standard_task_runner.py:52} INFO - Started process 316513 to run task
+[2025-01-16 19:41:10,099] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'agile_data_science_batch_prediction_model_training', 'pyspark_train_classifier_model', '2016-12-08T00:00:00+00:00', '--job-id', '18', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/setup.py', '--cfg-path', '/tmp/tmp_6neh5ce', '--error-file', '/tmp/tmphxsqkwkn']
+[2025-01-16 19:41:10,100] {standard_task_runner.py:77} INFO - Job 18: Subtask pyspark_train_classifier_model
+[2025-01-16 19:41:10,125] {logging_mixin.py:109} INFO - Running <TaskInstance: agile_data_science_batch_prediction_model_training.pyspark_train_classifier_model 2016-12-08T00:00:00+00:00 [running]> on host ibdn-VirtualBox
+[2025-01-16 19:41:10,158] {taskinstance.py:1254} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=agile_data_science_batch_prediction_model_training
+AIRFLOW_CTX_TASK_ID=pyspark_train_classifier_model
+AIRFLOW_CTX_EXECUTION_DATE=2016-12-08T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2016-12-08T00:00:00+00:00
+[2025-01-16 19:41:10,158] {subprocess.py:52} INFO - Tmp dir root location: 
+ /tmp
+[2025-01-16 19:41:10,159] {subprocess.py:63} INFO - Running command: ['bash', '-c', '\nspark-submit --master local[8]   /home/ibdn/BDFI/practica_creativa//resources/train_spark_mllib_model.py   /home/ibdn/BDFI/practica_creativa/']
+[2025-01-16 19:41:10,163] {subprocess.py:74} INFO - Output:
+[2025-01-16 19:41:12,058] {subprocess.py:78} INFO - 25/01/16 19:41:12 WARN Utils: Your hostname, ibdn-VirtualBox resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+[2025-01-16 19:41:12,059] {subprocess.py:78} INFO - 25/01/16 19:41:12 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[2025-01-16 19:41:13,004] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SparkContext: Running Spark version 3.3.0
+[2025-01-16 19:41:13,136] {subprocess.py:78} INFO - 25/01/16 19:41:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-01-16 19:41:13,228] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO ResourceUtils: ==============================================================
+[2025-01-16 19:41:13,230] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-01-16 19:41:13,231] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO ResourceUtils: ==============================================================
+[2025-01-16 19:41:13,232] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SparkContext: Submitted application: train_spark_mllib_model.py
+[2025-01-16 19:41:13,249] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-01-16 19:41:13,259] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO ResourceProfile: Limiting resource is cpu
+[2025-01-16 19:41:13,261] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-01-16 19:41:13,294] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SecurityManager: Changing view acls to: ibdn
+[2025-01-16 19:41:13,295] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SecurityManager: Changing modify acls to: ibdn
+[2025-01-16 19:41:13,296] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SecurityManager: Changing view acls groups to:
+[2025-01-16 19:41:13,296] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SecurityManager: Changing modify acls groups to:
+[2025-01-16 19:41:13,297] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(ibdn); groups with view permissions: Set(); users  with modify permissions: Set(ibdn); groups with modify permissions: Set()
+[2025-01-16 19:41:13,716] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO Utils: Successfully started service 'sparkDriver' on port 33185.
+[2025-01-16 19:41:13,795] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SparkEnv: Registering MapOutputTracker
+[2025-01-16 19:41:13,881] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SparkEnv: Registering BlockManagerMaster
+[2025-01-16 19:41:13,951] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-01-16 19:41:13,951] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-01-16 19:41:13,953] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-01-16 19:41:13,969] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-3ffbb06d-ac81-40a0-83d1-5cc06258666f
+[2025-01-16 19:41:13,998] {subprocess.py:78} INFO - 25/01/16 19:41:13 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-01-16 19:41:14,033] {subprocess.py:78} INFO - 25/01/16 19:41:14 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-01-16 19:41:14,736] {subprocess.py:78} INFO - 25/01/16 19:41:14 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2025-01-16 19:41:14,741] {subprocess.py:78} INFO - 25/01/16 19:41:14 INFO Utils: Successfully started service 'SparkUI' on port 4041.
+[2025-01-16 19:41:15,096] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO Executor: Starting executor ID driver on host 10.0.2.15
+[2025-01-16 19:41:15,112] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2025-01-16 19:41:15,161] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38433.
+[2025-01-16 19:41:15,161] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO NettyBlockTransferService: Server created on 10.0.2.15:38433
+[2025-01-16 19:41:15,162] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-01-16 19:41:15,167] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 10.0.2.15, 38433, None)
+[2025-01-16 19:41:15,177] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO BlockManagerMasterEndpoint: Registering block manager 10.0.2.15:38433 with 434.4 MiB RAM, BlockManagerId(driver, 10.0.2.15, 38433, None)
+[2025-01-16 19:41:15,182] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 10.0.2.15, 38433, None)
+[2025-01-16 19:41:15,182] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 10.0.2.15, 38433, None)
+[2025-01-16 19:41:15,602] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-01-16 19:41:15,604] {subprocess.py:78} INFO - 25/01/16 19:41:15 INFO SharedState: Warehouse path is 'file:/tmp/airflowtmp5563iz6w/spark-warehouse'.
+[2025-01-16 19:41:16,363] {subprocess.py:78} INFO - 25/01/16 19:41:16 INFO InMemoryFileIndex: It took 53 ms to list leaf files for 1 paths.
+[2025-01-16 19:41:18,123] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO FileSourceStrategy: Pushed Filters:
+[2025-01-16 19:41:18,124] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO FileSourceStrategy: Post-Scan Filters:
+[2025-01-16 19:41:18,127] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO FileSourceStrategy: Output Data Schema: struct<ArrDelay: double, CRSArrTime: timestamp, CRSDepTime: timestamp, Carrier: string, DayOfMonth: int ... 11 more fields>
+[2025-01-16 19:41:18,470] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 199.0 KiB, free 434.2 MiB)
+[2025-01-16 19:41:18,544] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 434.2 MiB)
+[2025-01-16 19:41:18,547] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.4 MiB)
+[2025-01-16 19:41:18,550] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO SparkContext: Created broadcast 0 from first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60
+[2025-01-16 19:41:18,575] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:18,808] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO SparkContext: Starting job: first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60
+[2025-01-16 19:41:18,824] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO DAGScheduler: Got job 0 (first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60) with 1 output partitions
+[2025-01-16 19:41:18,852] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO DAGScheduler: Final stage: ResultStage 0 (first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60)
+[2025-01-16 19:41:18,852] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:18,852] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:18,854] {subprocess.py:78} INFO - 25/01/16 19:41:18 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[2] at first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60), which has no missing parents
+[2025-01-16 19:41:19,070] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 10.9 KiB, free 434.2 MiB)
+[2025-01-16 19:41:19,072] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.8 KiB, free 434.2 MiB)
+[2025-01-16 19:41:19,076] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 10.0.2.15:38433 (size: 5.8 KiB, free: 434.4 MiB)
+[2025-01-16 19:41:19,086] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:19,144] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[2] at first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:19,144] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:19,322] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4955 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:19,350] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+[2025-01-16 19:41:19,519] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:19,752] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO CodeGenerator: Code generated in 170.294175 ms
+[2025-01-16 19:41:19,820] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO CodecPool: Got brand-new decompressor [.bz2]
+[2025-01-16 19:41:19,953] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1485 bytes result sent to driver
+[2025-01-16 19:41:19,986] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 671 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:19,986] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:19,992] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO DAGScheduler: ResultStage 0 (first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60) finished in 1.109 s
+[2025-01-16 19:41:19,996] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:19,997] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO TaskSchedulerImpl: Killing all running tasks in stage 0: Stage finished
+[2025-01-16 19:41:20,004] {subprocess.py:78} INFO - 25/01/16 19:41:19 INFO DAGScheduler: Job 0 finished: first at /home/ibdn/BDFI/practica_creativa/resources/train_spark_mllib_model.py:60, took 1.189361 s
+[2025-01-16 19:41:20,225] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO FileSourceStrategy: Pushed Filters: IsNull(ArrDelay)
+[2025-01-16 19:41:20,225] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO FileSourceStrategy: Post-Scan Filters: isnull(ArrDelay#0)
+[2025-01-16 19:41:20,226] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO FileSourceStrategy: Output Data Schema: struct<ArrDelay: double>
+[2025-01-16 19:41:20,370] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO CodeGenerator: Code generated in 52.535469 ms
+[2025-01-16 19:41:20,374] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO MemoryStore: Block broadcast_2 stored as values in memory (estimated size 199.0 KiB, free 434.0 MiB)
+[2025-01-16 19:41:20,380] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.9 MiB)
+[2025-01-16 19:41:20,382] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO BlockManagerInfo: Added broadcast_2_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:20,383] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO SparkContext: Created broadcast 2 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:20,384] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:20,426] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Registering RDD 6 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+[2025-01-16 19:41:20,429] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Got map stage job 1 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:20,429] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Final stage: ShuffleMapStage 1 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:20,430] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:20,430] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:20,472] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Submitting ShuffleMapStage 1 (MapPartitionsRDD[6] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:20,505] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO MemoryStore: Block broadcast_3 stored as values in memory (estimated size 16.0 KiB, free 433.9 MiB)
+[2025-01-16 19:41:20,508] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.9 MiB)
+[2025-01-16 19:41:20,512] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO BlockManagerInfo: Added broadcast_3_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:20,512] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:20,512] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 1 (MapPartitionsRDD[6] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:20,512] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO TaskSchedulerImpl: Adding task set 1.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:20,516] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:20,518] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO TaskSetManager: Starting task 1.0 in stage 1.0 (TID 2) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:20,519] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+[2025-01-16 19:41:20,519] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO Executor: Running task 1.0 in stage 1.0 (TID 2)
+[2025-01-16 19:41:20,556] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:20,583] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:20,601] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO CodeGenerator: Code generated in 15.380548 ms
+[2025-01-16 19:41:20,627] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO CodeGenerator: Code generated in 11.308835 ms
+[2025-01-16 19:41:20,646] {subprocess.py:78} INFO - 25/01/16 19:41:20 INFO CodecPool: Got brand-new decompressor [.bz2]
+[2025-01-16 19:41:21,067] {subprocess.py:78} INFO - 25/01/16 19:41:21 INFO BlockManagerInfo: Removed broadcast_1_piece0 on 10.0.2.15:38433 in memory (size: 5.8 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:22,102] {subprocess.py:78} INFO - 25/01/16 19:41:22 INFO Executor: Finished task 1.0 in stage 1.0 (TID 2). 1977 bytes result sent to driver
+[2025-01-16 19:41:22,257] {subprocess.py:78} INFO - 25/01/16 19:41:22 INFO TaskSetManager: Finished task 1.0 in stage 1.0 (TID 2) in 1740 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:24,190] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 1977 bytes result sent to driver
+[2025-01-16 19:41:24,195] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 3679 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:41:24,196] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:24,199] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: ShuffleMapStage 1 (count at NativeMethodAccessorImpl.java:0) finished in 3.723 s
+[2025-01-16 19:41:24,203] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:41:24,204] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: running: Set()
+[2025-01-16 19:41:24,204] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:41:24,206] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:41:24,256] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO CodeGenerator: Code generated in 6.91746 ms
+[2025-01-16 19:41:24,282] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:24,284] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Got job 2 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:41:24,284] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Final stage: ResultStage 3 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:24,284] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 2)
+[2025-01-16 19:41:24,285] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:24,287] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Submitting ResultStage 3 (MapPartitionsRDD[9] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:24,298] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO MemoryStore: Block broadcast_4 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:41:24,298] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:41:24,298] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO BlockManagerInfo: Added broadcast_4_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:24,298] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:24,300] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 3 (MapPartitionsRDD[9] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:24,300] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSchedulerImpl: Adding task set 3.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:24,303] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSetManager: Starting task 0.0 in stage 3.0 (TID 3) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:24,303] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO Executor: Running task 0.0 in stage 3.0 (TID 3)
+[2025-01-16 19:41:24,326] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:41:24,327] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 7 ms
+[2025-01-16 19:41:24,338] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO Executor: Finished task 0.0 in stage 3.0 (TID 3). 2649 bytes result sent to driver
+[2025-01-16 19:41:24,342] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSetManager: Finished task 0.0 in stage 3.0 (TID 3) in 41 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:24,346] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:24,346] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: ResultStage 3 (count at NativeMethodAccessorImpl.java:0) finished in 0.051 s
+[2025-01-16 19:41:24,346] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Job 2 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:24,346] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSchedulerImpl: Killing all running tasks in stage 3: Stage finished
+[2025-01-16 19:41:24,346] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Job 2 finished: count at NativeMethodAccessorImpl.java:0, took 0.061471 s
+[2025-01-16 19:41:24,365] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO FileSourceStrategy: Pushed Filters: IsNull(CRSArrTime)
+[2025-01-16 19:41:24,366] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO FileSourceStrategy: Post-Scan Filters: isnull(CRSArrTime#1)
+[2025-01-16 19:41:24,367] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO FileSourceStrategy: Output Data Schema: struct<CRSArrTime: timestamp>
+[2025-01-16 19:41:24,394] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO CodeGenerator: Code generated in 8.787188 ms
+[2025-01-16 19:41:24,399] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO MemoryStore: Block broadcast_5 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:24,407] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:41:24,409] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO BlockManagerInfo: Added broadcast_5_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:24,409] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO SparkContext: Created broadcast 5 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:24,411] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:24,417] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Registering RDD 13 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 1
+[2025-01-16 19:41:24,417] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Got map stage job 3 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:24,417] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Final stage: ShuffleMapStage 4 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:24,417] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:24,417] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:24,420] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Submitting ShuffleMapStage 4 (MapPartitionsRDD[13] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:24,423] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO MemoryStore: Block broadcast_6 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:24,424] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO MemoryStore: Block broadcast_6_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:24,425] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO BlockManagerInfo: Added broadcast_6_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:24,427] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO SparkContext: Created broadcast 6 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:24,428] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[13] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:24,428] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSchedulerImpl: Adding task set 4.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:24,465] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSetManager: Starting task 0.0 in stage 4.0 (TID 4) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:24,465] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO TaskSetManager: Starting task 1.0 in stage 4.0 (TID 5) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:24,465] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO Executor: Running task 1.0 in stage 4.0 (TID 5)
+[2025-01-16 19:41:24,470] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO Executor: Running task 0.0 in stage 4.0 (TID 4)
+[2025-01-16 19:41:24,475] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:24,476] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:24,492] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO CodeGenerator: Code generated in 14.210509 ms
+[2025-01-16 19:41:24,500] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO CodeGenerator: Code generated in 2.125166 ms
+[2025-01-16 19:41:24,710] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO BlockManagerInfo: Removed broadcast_2_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:24,759] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO BlockManagerInfo: Removed broadcast_4_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:24,814] {subprocess.py:78} INFO - 25/01/16 19:41:24 INFO BlockManagerInfo: Removed broadcast_3_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:26,163] {subprocess.py:78} INFO - 25/01/16 19:41:26 INFO Executor: Finished task 1.0 in stage 4.0 (TID 5). 1977 bytes result sent to driver
+[2025-01-16 19:41:26,167] {subprocess.py:78} INFO - 25/01/16 19:41:26 INFO TaskSetManager: Finished task 1.0 in stage 4.0 (TID 5) in 1702 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:29,402] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO Executor: Finished task 0.0 in stage 4.0 (TID 4). 1977 bytes result sent to driver
+[2025-01-16 19:41:29,403] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSetManager: Finished task 0.0 in stage 4.0 (TID 4) in 4940 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:41:29,404] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:29,407] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: ShuffleMapStage 4 (count at NativeMethodAccessorImpl.java:0) finished in 4.988 s
+[2025-01-16 19:41:29,408] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:41:29,408] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: running: Set()
+[2025-01-16 19:41:29,409] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:41:29,409] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:41:29,430] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:29,432] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Got job 4 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:41:29,432] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Final stage: ResultStage 6 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:29,433] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 5)
+[2025-01-16 19:41:29,434] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:29,436] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Submitting ResultStage 6 (MapPartitionsRDD[16] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:29,440] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO MemoryStore: Block broadcast_7 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:41:29,443] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO MemoryStore: Block broadcast_7_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:41:29,443] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO BlockManagerInfo: Added broadcast_7_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:29,444] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO SparkContext: Created broadcast 7 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:29,445] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 6 (MapPartitionsRDD[16] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:29,445] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSchedulerImpl: Adding task set 6.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:29,446] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSetManager: Starting task 0.0 in stage 6.0 (TID 6) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:29,448] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO Executor: Running task 0.0 in stage 6.0 (TID 6)
+[2025-01-16 19:41:29,450] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:41:29,450] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:41:29,452] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO Executor: Finished task 0.0 in stage 6.0 (TID 6). 2649 bytes result sent to driver
+[2025-01-16 19:41:29,454] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSetManager: Finished task 0.0 in stage 6.0 (TID 6) in 9 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:29,456] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: ResultStage 6 (count at NativeMethodAccessorImpl.java:0) finished in 0.017 s
+[2025-01-16 19:41:29,458] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSchedulerImpl: Removed TaskSet 6.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:29,458] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Job 4 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:29,458] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSchedulerImpl: Killing all running tasks in stage 6: Stage finished
+[2025-01-16 19:41:29,459] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Job 4 finished: count at NativeMethodAccessorImpl.java:0, took 0.027613 s
+[2025-01-16 19:41:29,479] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO FileSourceStrategy: Pushed Filters: IsNull(CRSDepTime)
+[2025-01-16 19:41:29,480] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO FileSourceStrategy: Post-Scan Filters: isnull(CRSDepTime#2)
+[2025-01-16 19:41:29,482] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO FileSourceStrategy: Output Data Schema: struct<CRSDepTime: timestamp>
+[2025-01-16 19:41:29,502] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO MemoryStore: Block broadcast_8 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:29,507] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO MemoryStore: Block broadcast_8_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:41:29,516] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO BlockManagerInfo: Added broadcast_8_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:29,519] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO SparkContext: Created broadcast 8 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:29,519] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:29,522] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Registering RDD 20 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 2
+[2025-01-16 19:41:29,522] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Got map stage job 5 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:29,523] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Final stage: ShuffleMapStage 7 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:29,523] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:29,524] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:29,525] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Submitting ShuffleMapStage 7 (MapPartitionsRDD[20] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:29,529] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO MemoryStore: Block broadcast_9 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:29,533] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO MemoryStore: Block broadcast_9_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:29,533] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO BlockManagerInfo: Added broadcast_9_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:29,535] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO SparkContext: Created broadcast 9 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:29,535] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 7 (MapPartitionsRDD[20] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:29,535] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSchedulerImpl: Adding task set 7.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:29,535] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSetManager: Starting task 0.0 in stage 7.0 (TID 7) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:29,535] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO TaskSetManager: Starting task 1.0 in stage 7.0 (TID 8) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:29,535] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO Executor: Running task 0.0 in stage 7.0 (TID 7)
+[2025-01-16 19:41:29,538] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO Executor: Running task 1.0 in stage 7.0 (TID 8)
+[2025-01-16 19:41:29,547] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:29,549] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:29,781] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO BlockManagerInfo: Removed broadcast_6_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:29,851] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO BlockManagerInfo: Removed broadcast_5_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:29,905] {subprocess.py:78} INFO - 25/01/16 19:41:29 INFO BlockManagerInfo: Removed broadcast_7_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:30,917] {subprocess.py:78} INFO - 25/01/16 19:41:30 INFO Executor: Finished task 1.0 in stage 7.0 (TID 8). 1977 bytes result sent to driver
+[2025-01-16 19:41:30,918] {subprocess.py:78} INFO - 25/01/16 19:41:30 INFO TaskSetManager: Finished task 1.0 in stage 7.0 (TID 8) in 1383 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:34,836] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO Executor: Finished task 0.0 in stage 7.0 (TID 7). 1977 bytes result sent to driver
+[2025-01-16 19:41:34,842] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSetManager: Finished task 0.0 in stage 7.0 (TID 7) in 5307 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:41:34,842] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSchedulerImpl: Removed TaskSet 7.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:34,846] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: ShuffleMapStage 7 (count at NativeMethodAccessorImpl.java:0) finished in 5.319 s
+[2025-01-16 19:41:34,846] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:41:34,846] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: running: Set()
+[2025-01-16 19:41:34,846] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:41:34,846] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:41:34,883] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:34,890] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Got job 6 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:41:34,890] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Final stage: ResultStage 9 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:34,891] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 8)
+[2025-01-16 19:41:34,891] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:34,893] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Submitting ResultStage 9 (MapPartitionsRDD[23] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:34,897] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO MemoryStore: Block broadcast_10 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:41:34,904] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO MemoryStore: Block broadcast_10_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:41:34,904] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO BlockManagerInfo: Added broadcast_10_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:34,905] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO SparkContext: Created broadcast 10 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:34,906] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 9 (MapPartitionsRDD[23] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:34,906] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSchedulerImpl: Adding task set 9.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:34,907] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSetManager: Starting task 0.0 in stage 9.0 (TID 9) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:34,908] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO Executor: Running task 0.0 in stage 9.0 (TID 9)
+[2025-01-16 19:41:34,928] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:41:34,928] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:41:34,929] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO Executor: Finished task 0.0 in stage 9.0 (TID 9). 2649 bytes result sent to driver
+[2025-01-16 19:41:34,946] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSetManager: Finished task 0.0 in stage 9.0 (TID 9) in 38 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:34,946] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSchedulerImpl: Removed TaskSet 9.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:34,947] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: ResultStage 9 (count at NativeMethodAccessorImpl.java:0) finished in 0.053 s
+[2025-01-16 19:41:34,947] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Job 6 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:34,948] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO TaskSchedulerImpl: Killing all running tasks in stage 9: Stage finished
+[2025-01-16 19:41:34,949] {subprocess.py:78} INFO - 25/01/16 19:41:34 INFO DAGScheduler: Job 6 finished: count at NativeMethodAccessorImpl.java:0, took 0.064572 s
+[2025-01-16 19:41:35,084] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO FileSourceStrategy: Pushed Filters: IsNull(Carrier)
+[2025-01-16 19:41:35,088] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO FileSourceStrategy: Post-Scan Filters: isnull(Carrier#3)
+[2025-01-16 19:41:35,088] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO FileSourceStrategy: Output Data Schema: struct<Carrier: string>
+[2025-01-16 19:41:35,130] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO CodeGenerator: Code generated in 5.380505 ms
+[2025-01-16 19:41:35,144] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO MemoryStore: Block broadcast_11 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:35,150] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO MemoryStore: Block broadcast_11_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:41:35,177] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO BlockManagerInfo: Added broadcast_11_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:35,177] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO SparkContext: Created broadcast 11 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:35,177] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:35,180] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Registering RDD 27 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 3
+[2025-01-16 19:41:35,188] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Got map stage job 7 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:35,188] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Final stage: ShuffleMapStage 10 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:35,188] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:35,188] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:35,190] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Submitting ShuffleMapStage 10 (MapPartitionsRDD[27] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:35,213] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO MemoryStore: Block broadcast_12 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:35,213] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO MemoryStore: Block broadcast_12_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:35,213] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO BlockManagerInfo: Added broadcast_12_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:35,215] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO SparkContext: Created broadcast 12 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:35,215] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 10 (MapPartitionsRDD[27] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:35,215] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO TaskSchedulerImpl: Adding task set 10.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:35,216] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO TaskSetManager: Starting task 0.0 in stage 10.0 (TID 10) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:35,216] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO TaskSetManager: Starting task 1.0 in stage 10.0 (TID 11) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:35,217] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO Executor: Running task 0.0 in stage 10.0 (TID 10)
+[2025-01-16 19:41:35,222] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO Executor: Running task 1.0 in stage 10.0 (TID 11)
+[2025-01-16 19:41:35,226] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:35,228] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:35,246] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO CodeGenerator: Code generated in 3.533805 ms
+[2025-01-16 19:41:35,251] {subprocess.py:78} INFO - 25/01/16 19:41:35 INFO CodeGenerator: Code generated in 2.382094 ms
+[2025-01-16 19:41:36,024] {subprocess.py:78} INFO - 25/01/16 19:41:36 INFO BlockManagerInfo: Removed broadcast_8_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:36,171] {subprocess.py:78} INFO - 25/01/16 19:41:36 INFO BlockManagerInfo: Removed broadcast_9_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:36,236] {subprocess.py:78} INFO - 25/01/16 19:41:36 INFO Executor: Finished task 1.0 in stage 10.0 (TID 11). 1977 bytes result sent to driver
+[2025-01-16 19:41:36,238] {subprocess.py:78} INFO - 25/01/16 19:41:36 INFO BlockManagerInfo: Removed broadcast_10_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:36,239] {subprocess.py:78} INFO - 25/01/16 19:41:36 INFO TaskSetManager: Finished task 1.0 in stage 10.0 (TID 11) in 1023 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:38,778] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO Executor: Finished task 0.0 in stage 10.0 (TID 10). 1977 bytes result sent to driver
+[2025-01-16 19:41:38,782] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSetManager: Finished task 0.0 in stage 10.0 (TID 10) in 3566 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:41:38,784] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSchedulerImpl: Removed TaskSet 10.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:38,784] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: ShuffleMapStage 10 (count at NativeMethodAccessorImpl.java:0) finished in 3.594 s
+[2025-01-16 19:41:38,785] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:41:38,785] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: running: Set()
+[2025-01-16 19:41:38,785] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:41:38,785] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:41:38,836] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:38,842] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Got job 8 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:41:38,842] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Final stage: ResultStage 12 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:38,847] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 11)
+[2025-01-16 19:41:38,847] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:38,850] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Submitting ResultStage 12 (MapPartitionsRDD[30] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:38,850] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO MemoryStore: Block broadcast_13 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:41:38,851] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO MemoryStore: Block broadcast_13_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:41:38,852] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO BlockManagerInfo: Added broadcast_13_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:38,853] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO SparkContext: Created broadcast 13 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:38,853] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 12 (MapPartitionsRDD[30] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:38,900] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSchedulerImpl: Adding task set 12.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:38,920] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSetManager: Starting task 0.0 in stage 12.0 (TID 12) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:38,924] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO Executor: Running task 0.0 in stage 12.0 (TID 12)
+[2025-01-16 19:41:38,930] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:41:38,930] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:41:38,934] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO Executor: Finished task 0.0 in stage 12.0 (TID 12). 2649 bytes result sent to driver
+[2025-01-16 19:41:38,951] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSetManager: Finished task 0.0 in stage 12.0 (TID 12) in 31 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:38,951] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSchedulerImpl: Removed TaskSet 12.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:38,955] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: ResultStage 12 (count at NativeMethodAccessorImpl.java:0) finished in 0.105 s
+[2025-01-16 19:41:38,956] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Job 8 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:38,956] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO TaskSchedulerImpl: Killing all running tasks in stage 12: Stage finished
+[2025-01-16 19:41:38,957] {subprocess.py:78} INFO - 25/01/16 19:41:38 INFO DAGScheduler: Job 8 finished: count at NativeMethodAccessorImpl.java:0, took 0.126389 s
+[2025-01-16 19:41:39,073] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO FileSourceStrategy: Pushed Filters: IsNull(DayOfMonth)
+[2025-01-16 19:41:39,074] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO FileSourceStrategy: Post-Scan Filters: isnull(DayOfMonth#4)
+[2025-01-16 19:41:39,074] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO FileSourceStrategy: Output Data Schema: struct<DayOfMonth: int>
+[2025-01-16 19:41:39,074] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO CodeGenerator: Code generated in 4.610371 ms
+[2025-01-16 19:41:39,087] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO MemoryStore: Block broadcast_14 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:39,091] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO MemoryStore: Block broadcast_14_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:41:39,092] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO BlockManagerInfo: Added broadcast_14_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:39,093] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO SparkContext: Created broadcast 14 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:39,094] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:39,098] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Registering RDD 34 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 4
+[2025-01-16 19:41:39,099] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Got map stage job 9 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:39,099] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Final stage: ShuffleMapStage 13 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:39,099] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:39,100] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:39,104] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Submitting ShuffleMapStage 13 (MapPartitionsRDD[34] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:39,107] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO MemoryStore: Block broadcast_15 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:39,109] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO MemoryStore: Block broadcast_15_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:39,109] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO BlockManagerInfo: Added broadcast_15_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:39,110] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO SparkContext: Created broadcast 15 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:39,111] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 13 (MapPartitionsRDD[34] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:39,111] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO TaskSchedulerImpl: Adding task set 13.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:39,113] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO TaskSetManager: Starting task 0.0 in stage 13.0 (TID 13) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:39,115] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO TaskSetManager: Starting task 1.0 in stage 13.0 (TID 14) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:39,116] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO Executor: Running task 0.0 in stage 13.0 (TID 13)
+[2025-01-16 19:41:39,122] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:39,130] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO CodeGenerator: Code generated in 4.500558 ms
+[2025-01-16 19:41:39,135] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO CodeGenerator: Code generated in 2.056464 ms
+[2025-01-16 19:41:39,146] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO Executor: Running task 1.0 in stage 13.0 (TID 14)
+[2025-01-16 19:41:39,403] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:39,580] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO BlockManagerInfo: Removed broadcast_12_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:39,617] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO BlockManagerInfo: Removed broadcast_13_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:39,693] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO BlockManagerInfo: Removed broadcast_11_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:39,858] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO Executor: Finished task 1.0 in stage 13.0 (TID 14). 1977 bytes result sent to driver
+[2025-01-16 19:41:39,859] {subprocess.py:78} INFO - 25/01/16 19:41:39 INFO TaskSetManager: Finished task 1.0 in stage 13.0 (TID 14) in 745 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:43,361] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO Executor: Finished task 0.0 in stage 13.0 (TID 13). 1977 bytes result sent to driver
+[2025-01-16 19:41:43,364] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSetManager: Finished task 0.0 in stage 13.0 (TID 13) in 4249 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:41:43,364] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSchedulerImpl: Removed TaskSet 13.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:43,366] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: ShuffleMapStage 13 (count at NativeMethodAccessorImpl.java:0) finished in 4.261 s
+[2025-01-16 19:41:43,366] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:41:43,367] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: running: Set()
+[2025-01-16 19:41:43,367] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:41:43,367] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:41:43,400] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:43,417] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Got job 10 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:41:43,418] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Final stage: ResultStage 15 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:43,418] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 14)
+[2025-01-16 19:41:43,418] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:43,429] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Submitting ResultStage 15 (MapPartitionsRDD[37] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:43,429] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO MemoryStore: Block broadcast_16 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:41:43,429] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO MemoryStore: Block broadcast_16_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:41:43,431] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO BlockManagerInfo: Added broadcast_16_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:43,432] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO SparkContext: Created broadcast 16 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:43,432] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 15 (MapPartitionsRDD[37] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:43,432] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSchedulerImpl: Adding task set 15.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:43,436] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSetManager: Starting task 0.0 in stage 15.0 (TID 15) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:43,436] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO Executor: Running task 0.0 in stage 15.0 (TID 15)
+[2025-01-16 19:41:43,449] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:41:43,449] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:41:43,449] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO Executor: Finished task 0.0 in stage 15.0 (TID 15). 2649 bytes result sent to driver
+[2025-01-16 19:41:43,449] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSetManager: Finished task 0.0 in stage 15.0 (TID 15) in 17 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:43,449] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSchedulerImpl: Removed TaskSet 15.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:43,450] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: ResultStage 15 (count at NativeMethodAccessorImpl.java:0) finished in 0.023 s
+[2025-01-16 19:41:43,450] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Job 10 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:43,450] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSchedulerImpl: Killing all running tasks in stage 15: Stage finished
+[2025-01-16 19:41:43,452] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Job 10 finished: count at NativeMethodAccessorImpl.java:0, took 0.035445 s
+[2025-01-16 19:41:43,503] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO FileSourceStrategy: Pushed Filters: IsNull(DayOfWeek)
+[2025-01-16 19:41:43,522] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO FileSourceStrategy: Post-Scan Filters: isnull(DayOfWeek#5)
+[2025-01-16 19:41:43,522] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO FileSourceStrategy: Output Data Schema: struct<DayOfWeek: int>
+[2025-01-16 19:41:43,533] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO MemoryStore: Block broadcast_17 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:43,547] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO MemoryStore: Block broadcast_17_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:41:43,550] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO BlockManagerInfo: Added broadcast_17_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:43,551] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO SparkContext: Created broadcast 17 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:43,552] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:43,569] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Registering RDD 41 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 5
+[2025-01-16 19:41:43,569] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Got map stage job 11 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:43,569] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Final stage: ShuffleMapStage 16 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:43,569] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:43,569] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:43,571] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Submitting ShuffleMapStage 16 (MapPartitionsRDD[41] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:43,587] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO MemoryStore: Block broadcast_18 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:43,588] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO MemoryStore: Block broadcast_18_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:43,591] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO BlockManagerInfo: Added broadcast_18_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:43,593] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO SparkContext: Created broadcast 18 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:43,593] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 16 (MapPartitionsRDD[41] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:43,593] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSchedulerImpl: Adding task set 16.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:43,595] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSetManager: Starting task 0.0 in stage 16.0 (TID 16) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:43,595] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO TaskSetManager: Starting task 1.0 in stage 16.0 (TID 17) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:43,595] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO Executor: Running task 0.0 in stage 16.0 (TID 16)
+[2025-01-16 19:41:43,595] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO Executor: Running task 1.0 in stage 16.0 (TID 17)
+[2025-01-16 19:41:43,604] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:43,663] {subprocess.py:78} INFO - 25/01/16 19:41:43 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:44,304] {subprocess.py:78} INFO - 25/01/16 19:41:44 INFO Executor: Finished task 1.0 in stage 16.0 (TID 17). 1934 bytes result sent to driver
+[2025-01-16 19:41:44,310] {subprocess.py:78} INFO - 25/01/16 19:41:44 INFO TaskSetManager: Finished task 1.0 in stage 16.0 (TID 17) in 715 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:44,503] {subprocess.py:78} INFO - 25/01/16 19:41:44 INFO BlockManagerInfo: Removed broadcast_16_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:44,561] {subprocess.py:78} INFO - 25/01/16 19:41:44 INFO BlockManagerInfo: Removed broadcast_15_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:44,588] {subprocess.py:78} INFO - 25/01/16 19:41:44 INFO BlockManagerInfo: Removed broadcast_14_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:47,347] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO Executor: Finished task 0.0 in stage 16.0 (TID 16). 1977 bytes result sent to driver
+[2025-01-16 19:41:47,347] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSetManager: Finished task 0.0 in stage 16.0 (TID 16) in 3751 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:41:47,347] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSchedulerImpl: Removed TaskSet 16.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:47,350] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: ShuffleMapStage 16 (count at NativeMethodAccessorImpl.java:0) finished in 3.777 s
+[2025-01-16 19:41:47,350] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:41:47,350] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: running: Set()
+[2025-01-16 19:41:47,350] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:41:47,350] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:41:47,391] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:47,395] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Got job 12 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:41:47,396] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Final stage: ResultStage 18 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:47,396] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 17)
+[2025-01-16 19:41:47,396] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:47,402] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Submitting ResultStage 18 (MapPartitionsRDD[44] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:47,402] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO MemoryStore: Block broadcast_19 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:41:47,402] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO MemoryStore: Block broadcast_19_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:41:47,402] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO BlockManagerInfo: Added broadcast_19_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:47,405] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO SparkContext: Created broadcast 19 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:47,406] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 18 (MapPartitionsRDD[44] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:41:47,406] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSchedulerImpl: Adding task set 18.0 with 1 tasks resource profile 0
+[2025-01-16 19:41:47,407] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSetManager: Starting task 0.0 in stage 18.0 (TID 18) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:47,408] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO Executor: Running task 0.0 in stage 18.0 (TID 18)
+[2025-01-16 19:41:47,410] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:41:47,410] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:41:47,411] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO Executor: Finished task 0.0 in stage 18.0 (TID 18). 2649 bytes result sent to driver
+[2025-01-16 19:41:47,411] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSetManager: Finished task 0.0 in stage 18.0 (TID 18) in 4 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:41:47,411] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSchedulerImpl: Removed TaskSet 18.0, whose tasks have all completed, from pool
+[2025-01-16 19:41:47,412] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: ResultStage 18 (count at NativeMethodAccessorImpl.java:0) finished in 0.014 s
+[2025-01-16 19:41:47,412] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Job 12 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:41:47,412] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSchedulerImpl: Killing all running tasks in stage 18: Stage finished
+[2025-01-16 19:41:47,413] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Job 12 finished: count at NativeMethodAccessorImpl.java:0, took 0.022838 s
+[2025-01-16 19:41:47,437] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO FileSourceStrategy: Pushed Filters: IsNull(DayOfYear)
+[2025-01-16 19:41:47,443] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO FileSourceStrategy: Post-Scan Filters: isnull(DayOfYear#6)
+[2025-01-16 19:41:47,443] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO FileSourceStrategy: Output Data Schema: struct<DayOfYear: int>
+[2025-01-16 19:41:47,468] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO MemoryStore: Block broadcast_20 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:47,483] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO MemoryStore: Block broadcast_20_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:41:47,487] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO BlockManagerInfo: Added broadcast_20_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:47,487] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO SparkContext: Created broadcast 20 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:41:47,487] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:41:47,488] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Registering RDD 48 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 6
+[2025-01-16 19:41:47,489] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Got map stage job 13 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:41:47,489] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Final stage: ShuffleMapStage 19 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:41:47,489] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:41:47,489] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:41:47,490] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Submitting ShuffleMapStage 19 (MapPartitionsRDD[48] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:41:47,492] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO MemoryStore: Block broadcast_21 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:47,493] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO MemoryStore: Block broadcast_21_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:41:47,494] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO BlockManagerInfo: Added broadcast_21_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:47,503] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO SparkContext: Created broadcast 21 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:41:47,505] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 19 (MapPartitionsRDD[48] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:41:47,505] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSchedulerImpl: Adding task set 19.0 with 2 tasks resource profile 0
+[2025-01-16 19:41:47,505] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSetManager: Starting task 0.0 in stage 19.0 (TID 19) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:47,505] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO TaskSetManager: Starting task 1.0 in stage 19.0 (TID 20) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:41:47,505] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO Executor: Running task 0.0 in stage 19.0 (TID 19)
+[2025-01-16 19:41:47,513] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO Executor: Running task 1.0 in stage 19.0 (TID 20)
+[2025-01-16 19:41:47,515] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:41:47,603] {subprocess.py:78} INFO - 25/01/16 19:41:47 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:41:50,057] {subprocess.py:78} INFO - 25/01/16 19:41:50 INFO Executor: Finished task 1.0 in stage 19.0 (TID 20). 1934 bytes result sent to driver
+[2025-01-16 19:41:50,089] {subprocess.py:78} INFO - 25/01/16 19:41:50 INFO TaskSetManager: Finished task 1.0 in stage 19.0 (TID 20) in 2584 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:41:51,830] {subprocess.py:78} INFO - 25/01/16 19:41:51 INFO BlockManagerInfo: Removed broadcast_19_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:51,905] {subprocess.py:78} INFO - 25/01/16 19:41:51 INFO BlockManagerInfo: Removed broadcast_18_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:41:52,613] {subprocess.py:78} INFO - 25/01/16 19:41:52 INFO BlockManagerInfo: Removed broadcast_17_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:03,789] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO Executor: Finished task 0.0 in stage 19.0 (TID 19). 1977 bytes result sent to driver
+[2025-01-16 19:42:03,789] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSetManager: Finished task 0.0 in stage 19.0 (TID 19) in 16284 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:42:03,794] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: ShuffleMapStage 19 (count at NativeMethodAccessorImpl.java:0) finished in 16.303 s
+[2025-01-16 19:42:03,794] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:42:03,794] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: running: Set()
+[2025-01-16 19:42:03,794] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:42:03,794] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:42:03,797] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSchedulerImpl: Removed TaskSet 19.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:03,831] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:03,833] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Got job 14 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:42:03,833] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Final stage: ResultStage 21 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:03,833] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 20)
+[2025-01-16 19:42:03,833] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:03,862] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Submitting ResultStage 21 (MapPartitionsRDD[51] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:03,862] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO MemoryStore: Block broadcast_22 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:42:03,862] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO MemoryStore: Block broadcast_22_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:42:03,867] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO BlockManagerInfo: Removed broadcast_21_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:03,867] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO BlockManagerInfo: Added broadcast_22_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:03,869] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO SparkContext: Created broadcast 22 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:03,875] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 21 (MapPartitionsRDD[51] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:42:03,875] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSchedulerImpl: Adding task set 21.0 with 1 tasks resource profile 0
+[2025-01-16 19:42:03,876] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSetManager: Starting task 0.0 in stage 21.0 (TID 21) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:03,876] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO Executor: Running task 0.0 in stage 21.0 (TID 21)
+[2025-01-16 19:42:03,890] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:42:03,891] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 3 ms
+[2025-01-16 19:42:03,895] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO Executor: Finished task 0.0 in stage 21.0 (TID 21). 2649 bytes result sent to driver
+[2025-01-16 19:42:03,897] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSetManager: Finished task 0.0 in stage 21.0 (TID 21) in 21 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:42:03,897] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSchedulerImpl: Removed TaskSet 21.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:03,898] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: ResultStage 21 (count at NativeMethodAccessorImpl.java:0) finished in 0.038 s
+[2025-01-16 19:42:03,899] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Job 14 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:42:03,899] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO TaskSchedulerImpl: Killing all running tasks in stage 21: Stage finished
+[2025-01-16 19:42:03,901] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO DAGScheduler: Job 14 finished: count at NativeMethodAccessorImpl.java:0, took 0.067637 s
+[2025-01-16 19:42:03,926] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO FileSourceStrategy: Pushed Filters: IsNull(DepDelay)
+[2025-01-16 19:42:03,929] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO FileSourceStrategy: Post-Scan Filters: isnull(DepDelay#7)
+[2025-01-16 19:42:03,929] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO FileSourceStrategy: Output Data Schema: struct<DepDelay: double>
+[2025-01-16 19:42:03,960] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO MemoryStore: Block broadcast_23 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:03,986] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO MemoryStore: Block broadcast_23_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:42:03,991] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO BlockManagerInfo: Added broadcast_23_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:03,992] {subprocess.py:78} INFO - 25/01/16 19:42:03 INFO SparkContext: Created broadcast 23 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:04,022] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:42:04,027] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Registering RDD 55 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 7
+[2025-01-16 19:42:04,027] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Got map stage job 15 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:42:04,027] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Final stage: ShuffleMapStage 22 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:04,027] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:42:04,027] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:04,042] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Submitting ShuffleMapStage 22 (MapPartitionsRDD[55] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:04,067] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO MemoryStore: Block broadcast_24 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:04,067] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO MemoryStore: Block broadcast_24_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:04,071] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO BlockManagerInfo: Added broadcast_24_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:04,073] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO SparkContext: Created broadcast 24 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:04,074] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 22 (MapPartitionsRDD[55] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:42:04,074] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO TaskSchedulerImpl: Adding task set 22.0 with 2 tasks resource profile 0
+[2025-01-16 19:42:04,074] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO TaskSetManager: Starting task 0.0 in stage 22.0 (TID 22) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:04,074] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO TaskSetManager: Starting task 1.0 in stage 22.0 (TID 23) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:04,074] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO Executor: Running task 1.0 in stage 22.0 (TID 23)
+[2025-01-16 19:42:04,077] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO Executor: Running task 0.0 in stage 22.0 (TID 22)
+[2025-01-16 19:42:04,080] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:42:04,109] {subprocess.py:78} INFO - 25/01/16 19:42:04 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:42:05,253] {subprocess.py:78} INFO - 25/01/16 19:42:05 INFO Executor: Finished task 1.0 in stage 22.0 (TID 23). 1934 bytes result sent to driver
+[2025-01-16 19:42:05,254] {subprocess.py:78} INFO - 25/01/16 19:42:05 INFO TaskSetManager: Finished task 1.0 in stage 22.0 (TID 23) in 1181 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:42:05,635] {subprocess.py:78} INFO - 25/01/16 19:42:05 INFO BlockManagerInfo: Removed broadcast_22_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:05,686] {subprocess.py:78} INFO - 25/01/16 19:42:05 INFO BlockManagerInfo: Removed broadcast_20_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:07,909] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO Executor: Finished task 0.0 in stage 22.0 (TID 22). 1977 bytes result sent to driver
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSetManager: Finished task 0.0 in stage 22.0 (TID 22) in 3838 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSchedulerImpl: Removed TaskSet 22.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: ShuffleMapStage 22 (count at NativeMethodAccessorImpl.java:0) finished in 3.869 s
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: running: Set()
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:42:07,913] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:42:07,931] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:07,932] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Got job 16 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:42:07,932] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Final stage: ResultStage 24 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:07,932] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 23)
+[2025-01-16 19:42:07,932] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:07,933] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Submitting ResultStage 24 (MapPartitionsRDD[58] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO MemoryStore: Block broadcast_25 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO MemoryStore: Block broadcast_25_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO BlockManagerInfo: Added broadcast_25_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO SparkContext: Created broadcast 25 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 24 (MapPartitionsRDD[58] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSchedulerImpl: Adding task set 24.0 with 1 tasks resource profile 0
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSetManager: Starting task 0.0 in stage 24.0 (TID 24) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO Executor: Running task 0.0 in stage 24.0 (TID 24)
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:42:07,942] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:42:07,943] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO Executor: Finished task 0.0 in stage 24.0 (TID 24). 2649 bytes result sent to driver
+[2025-01-16 19:42:07,947] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSetManager: Finished task 0.0 in stage 24.0 (TID 24) in 5 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:42:07,947] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: ResultStage 24 (count at NativeMethodAccessorImpl.java:0) finished in 0.011 s
+[2025-01-16 19:42:07,947] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Job 16 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:42:07,948] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSchedulerImpl: Removed TaskSet 24.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:07,948] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO TaskSchedulerImpl: Killing all running tasks in stage 24: Stage finished
+[2025-01-16 19:42:07,948] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO DAGScheduler: Job 16 finished: count at NativeMethodAccessorImpl.java:0, took 0.017136 s
+[2025-01-16 19:42:07,970] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO FileSourceStrategy: Pushed Filters: IsNull(Dest)
+[2025-01-16 19:42:07,983] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO FileSourceStrategy: Post-Scan Filters: isnull(Dest#8)
+[2025-01-16 19:42:07,984] {subprocess.py:78} INFO - 25/01/16 19:42:07 INFO FileSourceStrategy: Output Data Schema: struct<Dest: string>
+[2025-01-16 19:42:08,007] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO MemoryStore: Block broadcast_26 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:08,014] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO MemoryStore: Block broadcast_26_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:42:08,015] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO BlockManagerInfo: Added broadcast_26_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:08,021] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO SparkContext: Created broadcast 26 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:08,027] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:42:08,033] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Registering RDD 62 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 8
+[2025-01-16 19:42:08,033] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Got map stage job 17 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:42:08,033] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Final stage: ShuffleMapStage 25 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:08,033] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:42:08,033] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:08,034] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Submitting ShuffleMapStage 25 (MapPartitionsRDD[62] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:08,049] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO MemoryStore: Block broadcast_27 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:08,049] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO MemoryStore: Block broadcast_27_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:08,049] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO BlockManagerInfo: Added broadcast_27_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:08,049] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO SparkContext: Created broadcast 27 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:08,049] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 25 (MapPartitionsRDD[62] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:42:08,049] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO TaskSchedulerImpl: Adding task set 25.0 with 2 tasks resource profile 0
+[2025-01-16 19:42:08,050] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO TaskSetManager: Starting task 0.0 in stage 25.0 (TID 25) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:08,050] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO TaskSetManager: Starting task 1.0 in stage 25.0 (TID 26) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:08,055] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO Executor: Running task 1.0 in stage 25.0 (TID 26)
+[2025-01-16 19:42:08,055] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:42:08,055] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO Executor: Running task 0.0 in stage 25.0 (TID 25)
+[2025-01-16 19:42:08,097] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:42:08,429] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO Executor: Finished task 1.0 in stage 25.0 (TID 26). 1934 bytes result sent to driver
+[2025-01-16 19:42:08,450] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO TaskSetManager: Finished task 1.0 in stage 25.0 (TID 26) in 400 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:42:08,782] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO BlockManagerInfo: Removed broadcast_24_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:08,814] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO BlockManagerInfo: Removed broadcast_23_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:08,855] {subprocess.py:78} INFO - 25/01/16 19:42:08 INFO BlockManagerInfo: Removed broadcast_25_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO Executor: Finished task 0.0 in stage 25.0 (TID 25). 1977 bytes result sent to driver
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSetManager: Finished task 0.0 in stage 25.0 (TID 25) in 3201 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSchedulerImpl: Removed TaskSet 25.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: ShuffleMapStage 25 (count at NativeMethodAccessorImpl.java:0) finished in 3.207 s
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: running: Set()
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:42:11,255] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:42:11,280] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:11,290] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Got job 18 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:42:11,290] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Final stage: ResultStage 27 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:11,290] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 26)
+[2025-01-16 19:42:11,290] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:11,294] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Submitting ResultStage 27 (MapPartitionsRDD[65] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:11,295] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO MemoryStore: Block broadcast_28 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:42:11,306] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO MemoryStore: Block broadcast_28_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:42:11,306] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO BlockManagerInfo: Added broadcast_28_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:11,306] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO SparkContext: Created broadcast 28 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:11,306] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 27 (MapPartitionsRDD[65] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:42:11,306] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSchedulerImpl: Adding task set 27.0 with 1 tasks resource profile 0
+[2025-01-16 19:42:11,306] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSetManager: Starting task 0.0 in stage 27.0 (TID 27) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:11,314] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO Executor: Running task 0.0 in stage 27.0 (TID 27)
+[2025-01-16 19:42:11,317] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:42:11,317] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:42:11,324] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO Executor: Finished task 0.0 in stage 27.0 (TID 27). 2649 bytes result sent to driver
+[2025-01-16 19:42:11,325] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSetManager: Finished task 0.0 in stage 27.0 (TID 27) in 19 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:42:11,325] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSchedulerImpl: Removed TaskSet 27.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:11,329] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: ResultStage 27 (count at NativeMethodAccessorImpl.java:0) finished in 0.031 s
+[2025-01-16 19:42:11,331] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Job 18 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:42:11,335] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSchedulerImpl: Killing all running tasks in stage 27: Stage finished
+[2025-01-16 19:42:11,336] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Job 18 finished: count at NativeMethodAccessorImpl.java:0, took 0.057939 s
+[2025-01-16 19:42:11,374] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO FileSourceStrategy: Pushed Filters: IsNull(Distance)
+[2025-01-16 19:42:11,374] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO FileSourceStrategy: Post-Scan Filters: isnull(Distance#9)
+[2025-01-16 19:42:11,374] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO FileSourceStrategy: Output Data Schema: struct<Distance: double>
+[2025-01-16 19:42:11,415] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO MemoryStore: Block broadcast_29 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:11,415] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO MemoryStore: Block broadcast_29_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:42:11,417] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO BlockManagerInfo: Added broadcast_29_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:11,419] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO SparkContext: Created broadcast 29 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:11,420] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:42:11,425] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Registering RDD 69 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 9
+[2025-01-16 19:42:11,426] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Got map stage job 19 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:42:11,426] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Final stage: ShuffleMapStage 28 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:11,426] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:42:11,426] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:11,436] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Submitting ShuffleMapStage 28 (MapPartitionsRDD[69] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:11,439] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO MemoryStore: Block broadcast_30 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:11,449] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO MemoryStore: Block broadcast_30_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:11,461] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO BlockManagerInfo: Added broadcast_30_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:11,461] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO SparkContext: Created broadcast 30 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:11,461] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 28 (MapPartitionsRDD[69] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:42:11,461] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSchedulerImpl: Adding task set 28.0 with 2 tasks resource profile 0
+[2025-01-16 19:42:11,461] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSetManager: Starting task 0.0 in stage 28.0 (TID 28) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:11,461] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSetManager: Starting task 1.0 in stage 28.0 (TID 29) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:11,463] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO Executor: Running task 0.0 in stage 28.0 (TID 28)
+[2025-01-16 19:42:11,463] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO Executor: Running task 1.0 in stage 28.0 (TID 29)
+[2025-01-16 19:42:11,466] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:42:11,470] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:42:11,931] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO Executor: Finished task 1.0 in stage 28.0 (TID 29). 1934 bytes result sent to driver
+[2025-01-16 19:42:11,934] {subprocess.py:78} INFO - 25/01/16 19:42:11 INFO TaskSetManager: Finished task 1.0 in stage 28.0 (TID 29) in 473 ms on 10.0.2.15 (executor driver) (1/2)
+[2025-01-16 19:42:12,205] {subprocess.py:78} INFO - 25/01/16 19:42:12 INFO BlockManagerInfo: Removed broadcast_28_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:12,213] {subprocess.py:78} INFO - 25/01/16 19:42:12 INFO BlockManagerInfo: Removed broadcast_26_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:12,261] {subprocess.py:78} INFO - 25/01/16 19:42:12 INFO BlockManagerInfo: Removed broadcast_27_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:14,958] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO Executor: Finished task 0.0 in stage 28.0 (TID 28). 1977 bytes result sent to driver
+[2025-01-16 19:42:14,960] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO TaskSetManager: Finished task 0.0 in stage 28.0 (TID 28) in 3500 ms on 10.0.2.15 (executor driver) (2/2)
+[2025-01-16 19:42:14,960] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO TaskSchedulerImpl: Removed TaskSet 28.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:14,961] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: ShuffleMapStage 28 (count at NativeMethodAccessorImpl.java:0) finished in 3.528 s
+[2025-01-16 19:42:14,962] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: looking for newly runnable stages
+[2025-01-16 19:42:14,962] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: running: Set()
+[2025-01-16 19:42:14,962] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: waiting: Set()
+[2025-01-16 19:42:14,962] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: failed: Set()
+[2025-01-16 19:42:14,984] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO SparkContext: Starting job: count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:14,995] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: Got job 20 (count at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2025-01-16 19:42:14,995] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: Final stage: ResultStage 30 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:14,995] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 29)
+[2025-01-16 19:42:14,995] {subprocess.py:78} INFO - 25/01/16 19:42:14 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:15,008] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Submitting ResultStage 30 (MapPartitionsRDD[72] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:15,008] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO MemoryStore: Block broadcast_31 stored as values in memory (estimated size 11.1 KiB, free 433.9 MiB)
+[2025-01-16 19:42:15,008] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO MemoryStore: Block broadcast_31_piece0 stored as bytes in memory (estimated size 5.5 KiB, free 433.9 MiB)
+[2025-01-16 19:42:15,008] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO BlockManagerInfo: Added broadcast_31_piece0 in memory on 10.0.2.15:38433 (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:15,009] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO SparkContext: Created broadcast 31 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:15,009] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 30 (MapPartitionsRDD[72] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2025-01-16 19:42:15,009] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSchedulerImpl: Adding task set 30.0 with 1 tasks resource profile 0
+[2025-01-16 19:42:15,010] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSetManager: Starting task 0.0 in stage 30.0 (TID 30) (10.0.2.15, executor driver, partition 0, NODE_LOCAL, 4453 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:15,011] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO Executor: Running task 0.0 in stage 30.0 (TID 30)
+[2025-01-16 19:42:15,016] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO ShuffleBlockFetcherIterator: Getting 2 (120.0 B) non-empty blocks including 2 (120.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+[2025-01-16 19:42:15,017] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+[2025-01-16 19:42:15,026] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO Executor: Finished task 0.0 in stage 30.0 (TID 30). 2649 bytes result sent to driver
+[2025-01-16 19:42:15,026] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSetManager: Finished task 0.0 in stage 30.0 (TID 30) in 16 ms on 10.0.2.15 (executor driver) (1/1)
+[2025-01-16 19:42:15,026] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSchedulerImpl: Removed TaskSet 30.0, whose tasks have all completed, from pool
+[2025-01-16 19:42:15,027] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: ResultStage 30 (count at NativeMethodAccessorImpl.java:0) finished in 0.021 s
+[2025-01-16 19:42:15,028] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Job 20 is finished. Cancelling potential speculative or zombie tasks for this job
+[2025-01-16 19:42:15,028] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSchedulerImpl: Killing all running tasks in stage 30: Stage finished
+[2025-01-16 19:42:15,042] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Job 20 finished: count at NativeMethodAccessorImpl.java:0, took 0.041149 s
+[2025-01-16 19:42:15,056] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO FileSourceStrategy: Pushed Filters: IsNull(FlightDate)
+[2025-01-16 19:42:15,069] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO FileSourceStrategy: Post-Scan Filters: isnull(FlightDate#10)
+[2025-01-16 19:42:15,070] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO FileSourceStrategy: Output Data Schema: struct<FlightDate: date>
+[2025-01-16 19:42:15,082] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO MemoryStore: Block broadcast_32 stored as values in memory (estimated size 199.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:15,096] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO MemoryStore: Block broadcast_32_piece0 stored as bytes in memory (estimated size 33.9 KiB, free 433.7 MiB)
+[2025-01-16 19:42:15,102] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO BlockManagerInfo: Added broadcast_32_piece0 in memory on 10.0.2.15:38433 (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:15,103] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO SparkContext: Created broadcast 32 from count at NativeMethodAccessorImpl.java:0
+[2025-01-16 19:42:15,103] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO FileSourceScanExec: Planning scan with bin packing, max size: 4194304 bytes, open cost is considered as scanning 4194304 bytes.
+[2025-01-16 19:42:15,160] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Registering RDD 76 (count at NativeMethodAccessorImpl.java:0) as input to shuffle 10
+[2025-01-16 19:42:15,161] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Got map stage job 21 (count at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2025-01-16 19:42:15,161] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Final stage: ShuffleMapStage 31 (count at NativeMethodAccessorImpl.java:0)
+[2025-01-16 19:42:15,161] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Parents of final stage: List()
+[2025-01-16 19:42:15,169] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Missing parents: List()
+[2025-01-16 19:42:15,170] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Submitting ShuffleMapStage 31 (MapPartitionsRDD[76] at count at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2025-01-16 19:42:15,176] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO MemoryStore: Block broadcast_33 stored as values in memory (estimated size 16.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:15,177] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO MemoryStore: Block broadcast_33_piece0 stored as bytes in memory (estimated size 8.0 KiB, free 433.7 MiB)
+[2025-01-16 19:42:15,177] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO BlockManagerInfo: Added broadcast_33_piece0 in memory on 10.0.2.15:38433 (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:15,178] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO SparkContext: Created broadcast 33 from broadcast at DAGScheduler.scala:1513
+[2025-01-16 19:42:15,192] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 31 (MapPartitionsRDD[76] at count at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2025-01-16 19:42:15,193] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSchedulerImpl: Adding task set 31.0 with 2 tasks resource profile 0
+[2025-01-16 19:42:15,193] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSetManager: Starting task 0.0 in stage 31.0 (TID 31) (10.0.2.15, executor driver, partition 0, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:15,193] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO TaskSetManager: Starting task 1.0 in stage 31.0 (TID 32) (10.0.2.15, executor driver, partition 1, PROCESS_LOCAL, 4944 bytes) taskResourceAssignments Map()
+[2025-01-16 19:42:15,193] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO Executor: Running task 0.0 in stage 31.0 (TID 31)
+[2025-01-16 19:42:15,193] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 0-4194304, partition values: [empty row]
+[2025-01-16 19:42:15,193] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO Executor: Running task 1.0 in stage 31.0 (TID 32)
+[2025-01-16 19:42:15,221] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO FileScanRDD: Reading File path: file:///home/ibdn/BDFI/practica_creativa/data/simple_flight_delay_features.jsonl.bz2, range: 4194304-4676447, partition values: [empty row]
+[2025-01-16 19:42:15,765] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO BlockManagerInfo: Removed broadcast_31_piece0 on 10.0.2.15:38433 in memory (size: 5.5 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:15,832] {subprocess.py:78} INFO - 25/01/16 19:42:15 INFO BlockManagerInfo: Removed broadcast_29_piece0 on 10.0.2.15:38433 in memory (size: 33.9 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:16,062] {subprocess.py:78} INFO - 25/01/16 19:42:16 INFO BlockManagerInfo: Removed broadcast_30_piece0 on 10.0.2.15:38433 in memory (size: 8.0 KiB, free: 434.3 MiB)
+[2025-01-16 19:42:16,331] {subprocess.py:78} INFO - 25/01/16 19:42:16 INFO Executor: Finished task 1.0 in stage 31.0 (TID 32). 1977 bytes result sent to driver
+[2025-01-16 19:42:16,332] {subprocess.py:78} INFO - 25/01/16 19:42:16 INFO TaskSetManager: Finished task 1.0 in stage 31.0 (TID 32) in 1147 ms on 10.0.2.15 (executor driver) (1/2)
