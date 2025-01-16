@@ -390,6 +390,10 @@ airflow users create \
     --role Admin \
     --email axreydz@gmail.com
 ```
+Ahora tendríamos que iniciar airflow, primero ejecutamos lo siguiente:
+```
+airflow db init
+```
 - Start airflow scheduler and webserver
 ```shell
 airflow webserver --port 8080
