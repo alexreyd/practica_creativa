@@ -401,7 +401,10 @@ airflow sheduler
 ```
 Vistit http://localhost:8080/home for the web version of Apache Airflow.
 
-- The DAG is defined in `resources/airflow/setup.py`.
+- The DAG is defined in `resources/airflow/setup.py`. Este archivo se tendrá que mover a la carpeta dags generada: ./dags/setup.py
+- Esto da como resultado la carpeta ./models que se generaba en la Primera Parte con: python3 resources/train_spark_mllib_model.py .
+
+  
 - **TODO**: add the DAG and execute it to train the model (see the official documentation of Apache Airflow to learn how to exectue and add a DAG with the airflow command).
 - **TODO**: explain the architecture of apache airflow (see the official documentation of Apache Airflow).
 - **TODO**: analyzing the setup.py: what happens if the task fails?, what is the peridocity of the task?
