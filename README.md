@@ -373,7 +373,7 @@ pip install -r requirements.txt -c constraints.txt
 ```
 - Set the `PROJECT_HOME` env variable with the path of you cloned repository, for example:
 ```
-export PROJECT_HOME=/home/user/Desktop/practica_creativa
+export PROJECT_HOME=/home/ibdn/BDFI/practica_creativa
 ```
 - Configure airflow environment
 
