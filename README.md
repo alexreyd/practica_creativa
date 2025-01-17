@@ -346,6 +346,8 @@ Y finalmente pip:
 sudo apt-get install pip
 ```
 - Para hacer los sbt compile y sbt package recordar el sudo primero (o hacer sudo su antes de todo).
+- Ahora, tras ejecutar el comando docker-compose up --build, se puede ver en la siguiente imagen que en http://<IP_EXTERNA_INSTANCIA_GOOGLE_CLOUD> (http://34.175.133.65:5001/flights/delays/predict_kafka) aparece la página de Flask con una solicitud exitosa (en la consola de desarrollador de la derecha).
+![image](https://github.com/user-attachments/assets/70f16a8d-64c1-46d7-be8a-4ffa7e7d8228)
 
 ### Entrenar el modelo con Apache Airflow 
 
@@ -395,6 +397,9 @@ airflow webserver --port 8080
 airflow sheduler
 ```
 Vistit http://localhost:8080/home for the web version of Apache Airflow.
+En la máquina virtual se puede ver así:
+![creativaAirflow](https://github.com/user-attachments/assets/65275559-a659-470e-90ab-618d22d42143)
+
 
 - The DAG is defined in `resources/airflow/setup.py`. Este archivo se tendrá que mover a la carpeta dags generada: ./dags/setup.py
 - Esto da como resultado la carpeta ./models que se generaba en la Primera Parte con: python3 resources/train_spark_mllib_model.py .
