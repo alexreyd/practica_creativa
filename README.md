@@ -381,6 +381,10 @@ airflow users create \
     --role Admin \
     --email axreydz@gmail.com
 ```
+Podría ser necesario reinstalar estos paquetes si falla el comando users create:
+```
+python3.7 -m pip install --force-reinstall --no-cache-dir cffi cryptography
+```
 Ahora tendríamos que iniciar airflow, primero ejecutamos lo siguiente:
 ```
 airflow db init
