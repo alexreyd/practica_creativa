@@ -1,18 +1,4 @@
-# Primera parte
-
-## Realtime Predictive Analytics Course
-
-There is now a video course using code from chapter 8, [Realtime Predictive Analytics with Kafka, PySpark, Spark MLlib and Spark Streaming](http://datasyndrome.com/video). Check it out now at [datasyndrome.com/video](http://datasyndrome.com/video).
-
-A free preview of the course is available at [https://vimeo.com/202336113](https://vimeo.com/202336113)
-
-[<img src="images/video_course_cover.png">](http://datasyndrome.com/video)
-
-# The Data Value Pyramid
-
-Originally by Pete Warden, the data value pyramid is how the book is organized and structured. We climb it as we go forward each chapter.
-
-![Data Value Pyramid](images/climbing_the_pyramid_chapter_intro.png)
+# Primera parte (Sin Docker-Compose)
 
 # System Architecture
 
@@ -63,7 +49,7 @@ Once the server comes up, download the data and you are ready to go. First chang
 ```
 cd practica_creativa
 ```
-Now download the data.
+Now download the data. Esta parte es necesaria también para la mejora opcional de Airflow.
 
 For the [Realtime Predictive Analytics](http://datasyndrome.com/video)  run: 
 
@@ -269,7 +255,7 @@ spark-submit   --class es.upm.dit.ging.predictor.MakePrediction   --master local
 
 
 ```
-# Segunda parte
+# Segunda parte (Con Docker-Compose)
 ## Docker Compose
 - Antes de la ejecución de estos comandos se tendrá que hacer un sbt compile y sbt package dentro de la carpeta /practica_creativa/flight_prediction.
 Para desplegarlo únicamente habrá que ejecutar el comando docker-compose en la carpeta raiz de /practica_creativa.
@@ -280,14 +266,14 @@ Para cerrarlo habría que ejecutar
 ```
 docker-compose down
 ```
-Herramientas para el análisis de los estados de los contenedores útiles son los siguientes. El primero ve los logs del contenedor, el segundo te permite entrar y hacer búsquedas directamente en el contenedor deseado y el tercero analiza los estados de los contenedores.
+Herramientas útiles para el análisis de los estados de los contenedores son los siguientes. El primero ve los logs del contenedor, el segundo te permite entrar y hacer búsquedas directamente en el contenedor deseado, y el tercero analiza los estados de los contenedores.
 ```
 docker logs <CONTAINER_NAME>
 docker exec -it <CONTAINER_NAME> bash
 docker ps
 ```
 ## Kafka
-Ya está empleado el producer y consumer de Kafka dentro del archivo MakePrediction.scala y predict_flask.py, por lo que los resultados que aparecen en Flask se obtienen a través del consumer.
+Ya está empleado el producer y consumer de Kafka dentro del archivo MakePrediction.scala (lógica de streamWrite para escribir los resultados en el topic de response) y predict_flask.py (con el consumer publicando la response en Flask a través de los mensajes que le llegan), por lo que los resultados que aparecen en Flask se obtienen a través del consumer.
 
 ## Google Cloud
 - Maquina virtual de ubuntu 22:04 y 80 GB con HTTP y HTTPS
@@ -328,7 +314,7 @@ Ahora git
 ```
 sudo apt-get install git
 ```
-Ahora java primero:
+Ahora java antes que sbt, porque si no, no funcionará:
 ```
 sudo apt update
 sudo apt install openjdk-11-jdk -y
@@ -361,7 +347,7 @@ sudo apt-get install pip
 ```
 - Para hacer los sbt compile y sbt package recordar el sudo primero (o hacer sudo su antes de todo).
 
-### Train the model with Apache Airflow (optional)
+### Entrenar el modelo con Apache Airflow 
 
 - The version of Apache Airflow used is the 2.1.4 and it is installed with pip. For development it uses SQLite as database but it is not recommended for production. For the laboratory SQLite is sufficient.
 
@@ -370,6 +356,11 @@ sudo apt-get install pip
 ```shell
 cd resources/airflow
 pip install -r requirements.txt -c constraints.txt
+```
+Si este comando no funcionase, habría que obligar a utilizar la versión python3 instalada (3.7) con el siguiente comando:
+```
+sudo apt install -y build-essential gcc gfortran libatlas-base-dev python3.7-dev libffi-dev libssl-dev
+python3.7 -m pip install -r requirements.txt --constraint constraints.txt
 ```
 - Set the `PROJECT_HOME` env variable with the path of you cloned repository, for example:
 ```
